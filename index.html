@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Josiel - Full Stack Developer & AI Specialist</title>
+    <title>Josiel Borges - Full Stack Developer & AI Specialist</title>
     <meta name="description" content="Java and Python specialist with over 15 years of experience. Robust and intelligent software solutions with Generative AI.">
     
     <!-- Tailwind CSS -->
@@ -19,6 +19,9 @@
     
     <!-- Font Awesome para ícones gerais -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     
     <script>
         tailwind.config = {
@@ -43,7 +46,8 @@
         
         .glass-effect {
             backdrop-filter: blur(10px);
-            background: rgba(17, 24, 39, 0.8);
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
         
         .gradient-text {
@@ -59,7 +63,7 @@
         
         .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
         
         .tech-icon {
@@ -88,12 +92,13 @@
             position: absolute;
             top: 100%;
             right: 0;
-            background: rgba(17, 24, 39, 0.95);
-            border: 1px solid #374151;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #e5e7eb;
             border-radius: 8px;
             padding: 8px 0;
             min-width: 120px;
             backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
         .language-option {
@@ -111,14 +116,47 @@
             color: #3b82f6;
             font-weight: 600;
         }
+
+        .hero-bg-animated {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, #3b82f6 0%, #22c55e 100%);
+            background-size: 200% 200%;
+            animation: gradientMove 8s ease-in-out infinite;
+            opacity: 0.08;
+        }
+        @keyframes gradientMove {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .ripple-effect {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            background: rgba(59,130,246,0.4);
+            pointer-events: none;
+            z-index: 10;
+        }
+        @keyframes ripple {
+            to { transform: scale(2.5); opacity: 0; }
+        }
+        .ripple { position: relative; overflow: hidden; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100 font-inter">
+<body class="bg-gray-50 text-gray-800 font-inter">
     <!-- Header -->
-    <header class="fixed top-0 w-full z-50 glass-effect border-b border-gray-800">
+    <header class="fixed top-0 w-full z-50 glass-effect">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold gradient-text">Josiel</div>
+                <div class="text-2xl font-bold gradient-text">Josiel Borges</div>
                 <nav class="hidden md:flex space-x-8">
                     <a href="#sobre" class="hover:text-primary transition-colors duration-300" data-translate="nav.about">About</a>
                     <a href="#servicos" class="hover:text-primary transition-colors duration-300" data-translate="nav.services">Services</a>
@@ -141,7 +179,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="md:hidden text-white" id="mobile-menu-btn">
+                    <button class="md:hidden text-gray-800" id="mobile-menu-btn">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -150,7 +188,7 @@
         
         <!-- Mobile Menu -->
         <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-4 py-2 space-y-4 border-t border-gray-800">
+            <div class="px-4 py-2 space-y-4 border-t border-gray-200 bg-white">
                 <a href="#sobre" class="block hover:text-primary transition-colors duration-300" data-translate="nav.about">About</a>
                 <a href="#servicos" class="block hover:text-primary transition-colors duration-300" data-translate="nav.services">Services</a>
                 <a href="#contato" class="block hover:text-primary transition-colors duration-300" data-translate="nav.contact">Contact</a>
@@ -159,83 +197,92 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-24 pb-16 px-4">
-        <div class="container mx-auto max-w-6xl">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="flex-1 text-center lg:text-left">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                        <span data-translate="hero.title1">From Architecture to AI:</span>
-                        <br>
-                        <span class="gradient-text" data-translate="hero.title2">Robust and Intelligent</span>
-                        <br>
-                        <span data-translate="hero.title3">Software Solutions</span>
-                    </h1>
-                    <p class="text-xl text-gray-300 mb-8 leading-relaxed" data-translate="hero.subtitle">
-                        Java and Python specialist with over 15 years of experience, transforming complex challenges into efficient digital products. Currently seeking freelance projects to get hands-on and build amazing solutions.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#contato" class="btn-primary bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold inline-block text-center" data-translate="hero.cta1">
-                            Let's Talk
-                        </a>
-                        <a href="#servicos" class="btn-primary border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-semibold inline-block text-center transition-all duration-300" data-translate="hero.cta2">
-                            My Services
-                        </a>
+    <section class="pt-24 pb-16 px-4 relative overflow-hidden">
+        <div class="hero-bg-animated"></div>
+        <div class="relative z-10">
+            <div class="container mx-auto max-w-6xl">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="flex-1 text-center lg:text-left">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                            <span data-translate="hero.title1">From Architecture to AI:</span>
+                            <br>
+                            <span class="gradient-text" data-translate="hero.title2">Robust and Intelligent</span>
+                            <br>
+                            <span data-translate="hero.title3">Software Solutions</span>
+                        </h1>
+                        <p class="text-xl text-gray-600 mb-8 leading-relaxed" data-translate="hero.subtitle">
+                            Java and Python specialist with over 15 years of experience, transforming complex challenges into efficient digital products. Currently seeking freelance projects to get hands-on and build amazing solutions.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#contato" class="btn-primary ripple bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold inline-block text-center" data-translate="hero.cta1">
+                                Let's Talk
+                            </a>
+                            <a href="#servicos" class="btn-primary ripple border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-semibold inline-block text-center transition-all duration-300" data-translate="hero.cta2">
+                                My Services
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="flex-1 flex justify-center">
-                    <img src="https://placehold.co/400x400" alt="Josiel" class="rounded-full w-80 h-80 object-cover shadow-2xl border-4 border-primary/20">
+                    <div class="flex-1 flex justify-center">
+                        <img src="assets/images/josiel.jpg" alt="Josiel Borges" class="rounded-full w-80 h-80 object-cover shadow-2xl border-4 border-primary/20">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Technologies Section -->
-    <section class="py-16 px-4 bg-gray-800/50">
+    <section class="py-16 px-4 bg-white">
         <div class="container mx-auto max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-translate="tech.title">Technologies I Master</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8">
-                <div class="flex flex-col items-center">
-                    <i class="devicon-java-plain tech-icon text-6xl mb-2"></i>
-                    <span class="text-sm font-medium">Java</span>
+            <div class="overflow-x-auto scrollbar-hide" id="tech-carousel">
+                <div class="flex gap-8 min-w-max py-2 px-1" style="scroll-behavior:smooth;">
+                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
+                        <i class="devicon-java-plain tech-icon text-6xl mb-2"></i>
+                        <span class="text-sm font-medium">Java</span>
+                    </div>
+                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
+                        <i class="devicon-python-plain tech-icon text-6xl mb-2"></i>
+                        <span class="text-sm font-medium">Python</span>
+                    </div>
+                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
+                        <i class="devicon-spring-plain tech-icon text-6xl mb-2"></i>
+                        <span class="text-sm font-medium">Spring</span>
+                    </div>
+                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
+                        <i class="fas fa-bolt tech-icon text-6xl mb-2"></i>
+                        <span class="text-sm font-medium">Quarkus</span>
+                    </div>
+                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
+                        <i class="fas fa-rocket tech-icon text-6xl mb-2"></i>
+                        <span class="text-sm font-medium">FastAPI</span>
+                    </div>
+                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
+                        <i class="fas fa-brain tech-icon text-6xl mb-2"></i>
+                        <span class="text-sm font-medium">OpenAI</span>
+                    </div>
+                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
+                        <i class="fas fa-robot tech-icon text-6xl mb-2"></i>
+                        <span class="text-sm font-medium">Gemini</span>
+                    </div>
+                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
+                        <i class="fas fa-link tech-icon text-6xl mb-2"></i>
+                        <span class="text-sm font-medium">LangChain</span>
+                    </div>
                 </div>
-                <div class="flex flex-col items-center">
-                    <i class="devicon-python-plain tech-icon text-6xl mb-2"></i>
-                    <span class="text-sm font-medium">Python</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <i class="devicon-spring-plain tech-icon text-6xl mb-2"></i>
-                    <span class="text-sm font-medium">Spring</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <i class="fas fa-bolt tech-icon text-6xl mb-2"></i>
-                    <span class="text-sm font-medium">Quarkus</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <i class="fas fa-rocket tech-icon text-6xl mb-2"></i>
-                    <span class="text-sm font-medium">FastAPI</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <i class="fas fa-brain tech-icon text-6xl mb-2"></i>
-                    <span class="text-sm font-medium">OpenAI</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <i class="fas fa-robot tech-icon text-6xl mb-2"></i>
-                    <span class="text-sm font-medium">Gemini</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <i class="fas fa-link tech-icon text-6xl mb-2"></i>
-                    <span class="text-sm font-medium">LangChain</span>
-                </div>
+            </div>
+            <div class="flex justify-center gap-2 mt-4">
+                <button id="carousel-left" class="p-2 rounded-full bg-gray-200 hover:bg-primary hover:text-white transition"><i class="fas fa-chevron-left"></i></button>
+                <button id="carousel-right" class="p-2 rounded-full bg-gray-200 hover:bg-primary hover:text-white transition"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="sobre" class="py-16 px-4">
+    <section id="sobre" class="py-16 px-4 bg-gray-50">
         <div class="container mx-auto max-w-4xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-translate="about.title">A Passion for Problem Solving</h2>
-            <div class="bg-gray-800/50 rounded-2xl p-8 md:p-12">
-                <p class="text-lg md:text-xl leading-relaxed text-gray-300" data-translate="about.content">
+            <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+                <p class="text-lg md:text-xl leading-relaxed text-gray-700" data-translate="about.content">
                     My journey in technology began in 2009. With a solid foundation in Computer Science and specializations in Agile Leadership and Artificial Intelligence, I've always been driven by curiosity and the desire to learn. I started with PHP, but it was in the <strong class="text-primary">Java</strong> ecosystem that I built my career and became a senior specialist. In 2016, I took on the challenge of technical leadership, guiding teams to deliver high-impact projects. Today, as a Tech Lead, my greatest pleasure is still the same as at the beginning: <strong class="text-primary">programming</strong>. I love being on the front lines, developing products, solving problems, and exploring new frontiers with <strong class="text-primary">Generative AI</strong> and Python. It's this passion for building that motivates me to seek new challenges as a freelancer.
                 </p>
             </div>
@@ -243,74 +290,74 @@
     </section>
 
     <!-- Services Section -->
-    <section id="servicos" class="py-16 px-4 bg-gray-800/50">
+    <section id="servicos" class="py-16 px-4 bg-white">
         <div class="container mx-auto max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-translate="services.title">From Backend to Artificial Intelligence</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="card-hover bg-gray-900 rounded-xl p-6 border border-gray-700">
+                <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 shadow-lg" data-aos="fade-up">
                     <div class="text-primary text-4xl mb-4">
                         <i class="fas fa-server"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3" data-translate="services.service1.title">High-Performance Backend Development</h3>
-                    <p class="text-gray-300" data-translate="services.service1.description">Creation of robust and scalable systems with Java (Spring, Quarkus) and Python (FastAPI).</p>
+                    <p class="text-gray-600" data-translate="services.service1.description">Creation of robust and scalable systems with Java (Spring, Quarkus) and Python (FastAPI).</p>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="card-hover bg-gray-900 rounded-xl p-6 border border-gray-700">
+                <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 shadow-lg" data-aos="fade-up">
                     <div class="text-primary text-4xl mb-4">
                         <i class="fas fa-brain"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3" data-translate="services.service2.title">Generative AI Solutions</h3>
-                    <p class="text-gray-300" data-translate="services.service2.description">Development of intelligent applications using OpenAI/Gemini libraries and frameworks like LangChain.</p>
+                    <p class="text-gray-600" data-translate="services.service2.description">Development of intelligent applications using OpenAI/Gemini libraries and frameworks like LangChain.</p>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="card-hover bg-gray-900 rounded-xl p-6 border border-gray-700">
+                <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 shadow-lg" data-aos="fade-up">
                     <div class="text-primary text-4xl mb-4">
                         <i class="fas fa-plug"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3" data-translate="services.service3.title">System Integration</h3>
-                    <p class="text-gray-300" data-translate="services.service3.description">Architecture and implementation of integrations via REST APIs, SOAP, and messaging solutions to connect complex ecosystems.</p>
+                    <p class="text-gray-600" data-translate="services.service3.description">Architecture and implementation of integrations via REST APIs, SOAP, and messaging solutions to connect complex ecosystems.</p>
                 </div>
 
                 <!-- Service 4 -->
-                <div class="card-hover bg-gray-900 rounded-xl p-6 border border-gray-700">
+                <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 shadow-lg" data-aos="fade-up">
                     <div class="text-primary text-4xl mb-4">
                         <i class="fas fa-comments"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3" data-translate="services.service4.title">Intelligent Chatbots</h3>
-                    <p class="text-gray-300" data-translate="services.service4.description">Building chatbots for customer service automation and processes, offering fluid and efficient user experiences.</p>
+                    <p class="text-gray-600" data-translate="services.service4.description">Building chatbots for customer service automation and processes, offering fluid and efficient user experiences.</p>
                 </div>
 
                 <!-- Service 5 -->
-                <div class="card-hover bg-gray-900 rounded-xl p-6 border border-gray-700">
+                <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 shadow-lg" data-aos="fade-up">
                     <div class="text-primary text-4xl mb-4">
                         <i class="fas fa-sitemap"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3" data-translate="services.service5.title">Software Architecture</h3>
-                    <p class="text-gray-300" data-translate="services.service5.description">Design of resilient and well-documented application architectures, ensuring the longevity and maintainability of your project.</p>
+                    <p class="text-gray-600" data-translate="services.service5.description">Design of resilient and well-documented application architectures, ensuring the longevity and maintainability of your project.</p>
                 </div>
 
                 <!-- Service 6 -->
-                <div class="card-hover bg-gray-900 rounded-xl p-6 border border-gray-700">
+                <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 shadow-lg" data-aos="fade-up">
                     <div class="text-primary text-4xl mb-4">
                         <i class="fas fa-database"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3" data-translate="services.service6.title">Databases</h3>
-                    <p class="text-gray-300" data-translate="services.service6.description">Modeling and optimization of relational databases to ensure performance and data integrity.</p>
+                    <p class="text-gray-600" data-translate="services.service6.description">Modeling and optimization of relational databases to ensure performance and data integrity.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="py-16 px-4">
+    <section class="py-16 px-4 bg-gray-50">
         <div class="container mx-auto max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-translate="skills.title">My Toolbox</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Skills Category 1 -->
-                <div class="bg-gray-800/50 rounded-xl p-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
                     <h3 class="text-xl font-bold mb-4 text-primary" data-translate="skills.categories.languages">Languages</h3>
                     <div class="space-y-2">
                         <div class="flex items-center">
@@ -329,7 +376,7 @@
                 </div>
 
                 <!-- Skills Category 2 -->
-                <div class="bg-gray-800/50 rounded-xl p-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
                     <h3 class="text-xl font-bold mb-4 text-primary" data-translate="skills.categories.frameworks">Backend Frameworks</h3>
                     <div class="space-y-2">
                         <div class="flex items-center">
@@ -348,7 +395,7 @@
                 </div>
 
                 <!-- Skills Category 3 -->
-                <div class="bg-gray-800/50 rounded-xl p-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
                     <h3 class="text-xl font-bold mb-4 text-primary" data-translate="skills.categories.ai">Artificial Intelligence</h3>
                     <div class="space-y-2">
                         <div class="flex items-center">
@@ -367,7 +414,7 @@
                 </div>
 
                 <!-- Skills Category 4 -->
-                <div class="bg-gray-800/50 rounded-xl p-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
                     <h3 class="text-xl font-bold mb-4 text-primary" data-translate="skills.categories.databases">Databases</h3>
                     <div class="space-y-2">
                         <div class="flex items-center">
@@ -386,7 +433,7 @@
                 </div>
 
                 <!-- Skills Category 5 -->
-                <div class="bg-gray-800/50 rounded-xl p-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
                     <h3 class="text-xl font-bold mb-4 text-primary" data-translate="skills.categories.integrations">Integrations & APIs</h3>
                     <div class="space-y-2">
                         <div class="flex items-center">
@@ -405,7 +452,7 @@
                 </div>
 
                 <!-- Skills Category 6 -->
-                <div class="bg-gray-800/50 rounded-xl p-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
                     <h3 class="text-xl font-bold mb-4 text-primary" data-translate="skills.categories.methodologies">Methodologies</h3>
                     <div class="space-y-2">
                         <div class="flex items-center">
@@ -427,25 +474,25 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contato" class="py-16 px-4 bg-gray-800/50">
+    <section id="contato" class="py-16 px-4 bg-white">
         <div class="container mx-auto max-w-4xl text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-8" data-translate="contact.title">Have a challenge in mind?</h2>
-            <p class="text-xl text-gray-300 mb-8 leading-relaxed" data-translate="contact.subtitle">
+            <p class="text-xl text-gray-600 mb-8 leading-relaxed" data-translate="contact.subtitle">
                 If you're looking for a developer who combines deep technical knowledge, leadership experience, and a genuine passion for creating solutions, let's talk. I'm ready to help bring your project to life.
             </p>
-            <a href="mailto:seuemail@email.com" class="btn-primary bg-primary hover:bg-blue-600 text-white px-12 py-4 rounded-lg font-semibold inline-block text-xl mb-8" data-translate="contact.cta">
+            <a href="mailto:chrys.jo@gmail.com" class="btn-primary ripple bg-primary hover:bg-blue-600 text-white px-12 py-4 rounded-lg font-semibold inline-block text-xl mb-8" data-translate="contact.cta">
                 Get in Touch
             </a>
             
             <!-- Social Links -->
             <div class="flex justify-center space-x-8">
-                <a href="mailto:seuemail@email.com" class="text-3xl text-gray-400 hover:text-primary transition-colors duration-300" title="Email">
+                <a href="mailto:chrys.jo@gmail.com" class="text-3xl text-gray-400 hover:text-primary transition-colors duration-300 hover:scale-110 transform" title="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://linkedin.com/in/seuperfil" target="_blank" class="text-3xl text-gray-400 hover:text-primary transition-colors duration-300" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/josieleliseuborges/" target="_blank" class="text-3xl text-gray-400 hover:text-primary transition-colors duration-300 hover:scale-110 transform" title="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://github.com/seuperfil" target="_blank" class="text-3xl text-gray-400 hover:text-primary transition-colors duration-300" title="GitHub">
+                <a href="https://github.com/josielborges/" target="_blank" class="text-3xl text-gray-400 hover:text-primary transition-colors duration-300 hover:scale-110 transform" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
@@ -453,13 +500,16 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 px-4 border-t border-gray-800">
+    <footer class="py-8 px-4 border-t border-gray-200 bg-gray-50">
         <div class="container mx-auto text-center">
-            <p class="text-gray-400">
-                © <span id="current-year"></span> Josiel. <span data-translate="footer.rights">All rights reserved.</span>
+            <p class="text-gray-600">
+                © <span id="current-year"></span> Josiel Borges. <span data-translate="footer.rights">All rights reserved.</span>
             </p>
         </div>
     </footer>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-primary z-[9999] transition-all duration-200" style="width:0;"></div>
 
     <script>
         // Translation data
@@ -600,10 +650,10 @@
             
             // Update page title and meta description
             if (lang === 'en') {
-                document.title = 'Josiel - Full Stack Developer & AI Specialist';
+                document.title = 'Josiel Borges - Full Stack Developer & AI Specialist';
                 document.querySelector('meta[name="description"]').setAttribute('content', 'Java and Python specialist with over 15 years of experience. Robust and intelligent software solutions with Generative AI.');
             } else {
-                document.title = 'Josiel - Desenvolvedor Full Stack & Especialista em IA';
+                document.title = 'Josiel Borges - Desenvolvedor Full Stack & Especialista em IA';
                 document.querySelector('meta[name="description"]').setAttribute('content', 'Especialista em Java e Python com mais de 15 anos de experiência. Soluções de software robustas e inteligentes com IA Generativa.');
             }
             
@@ -679,6 +729,41 @@
                 header.classList.remove('shadow-lg');
             }
         });
+
+        // Scroll progress bar
+        window.addEventListener('scroll', () => {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.scrollY / docHeight) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + '%';
+        });
+
+        // Carrossel de tecnologias
+        const carousel = document.querySelector('#tech-carousel > div');
+        document.getElementById('carousel-left').onclick = () => carousel.scrollBy({left: -200, behavior: 'smooth'});
+        document.getElementById('carousel-right').onclick = () => carousel.scrollBy({left: 200, behavior: 'smooth'});
+
+        // Ripple effect
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const circle = document.createElement('span');
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
+            circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
+            circle.classList.add('ripple-effect');
+            button.appendChild(circle);
+            setTimeout(() => circle.remove(), 600);
+        }
+        document.querySelectorAll('.ripple').forEach(btn => {
+            btn.addEventListener('click', createRipple);
+        });
+    </script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 900, offset: 60 });
     </script>
 </body>
 </html> 
