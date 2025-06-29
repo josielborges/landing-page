@@ -1,472 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Josiel Borges - Full Stack Developer & AI Specialist</title>
-    <meta name="description" content="Java and Python specialist with over 15 years of experience. Robust and intelligent software solutions with Generative AI.">
+    <title>Josiel - Desenvolvedor Backend & IA | Da Arquitetura à IA</title>
+    <meta name="description" content="Especialista em Java e Python com mais de 15 anos de experiência, transformando desafios complexos em produtos digitais eficientes.">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts - Inter -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Devicon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
     
-    <!-- Font Awesome para ícones gerais -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'primary': '#3b82f6',
-                        'secondary': '#22c55e',
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .glass-effect {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.9);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #3b82f6, #22c55e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .tech-icon {
-            transition: all 0.3s ease;
-        }
-        
-        .tech-icon:hover {
-            transform: scale(1.1);
-            color: #3b82f6;
-        }
-        
-        .btn-primary {
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
-        }
-
-        .language-selector {
-            position: relative;
-        }
-
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 8px 0;
-            min-width: 120px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .language-option {
-            padding: 8px 16px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .language-option:hover {
-            background: rgba(59, 130, 246, 0.1);
-            color: #3b82f6;
-        }
-
-        .language-option.active {
-            color: #3b82f6;
-            font-weight: 600;
-        }
-
-        .hero-bg-animated {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, #3b82f6 0%, #22c55e 100%);
-            background-size: 200% 200%;
-            animation: gradientMove 8s ease-in-out infinite;
-            opacity: 0.08;
-        }
-        @keyframes gradientMove {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-        }
-
-        .ripple-effect {
-            position: absolute;
-            border-radius: 50%;
-            transform: scale(0);
-            animation: ripple 0.6s linear;
-            background: rgba(59,130,246,0.4);
-            pointer-events: none;
-            z-index: 10;
-        }
-        @keyframes ripple {
-            to { transform: scale(2.5); opacity: 0; }
-        }
-        .ripple { position: relative; overflow: hidden; }
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
-        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-    </style>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/josiel.jpg">
 </head>
-<body class="bg-gray-50 text-gray-800 font-inter">
-    <!-- Header -->
-    <header class="fixed top-0 w-full z-50 glass-effect">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold gradient-text">Josiel Borges</div>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#sobre" class="hover:text-primary transition-colors duration-300" data-translate="nav.about">About</a>
-                    <a href="#servicos" class="hover:text-primary transition-colors duration-300" data-translate="nav.services">Services</a>
-                    <a href="#contato" class="hover:text-primary transition-colors duration-300" data-translate="nav.contact">Contact</a>
-                </nav>
-                <div class="flex items-center space-x-4">
-                    <!-- Language Selector -->
-                    <div class="language-selector">
-                        <button id="language-btn" class="flex items-center space-x-2 text-sm hover:text-primary transition-colors duration-300">
-                            <i class="fas fa-globe"></i>
-                            <span id="current-lang">EN</span>
-                            <i class="fas fa-chevron-down text-xs"></i>
-                        </button>
-                        <div id="language-dropdown" class="language-dropdown hidden">
-                            <div class="language-option active" data-lang="en">
-                                <span>🇺🇸 English</span>
-                            </div>
-                            <div class="language-option" data-lang="pt">
-                                <span>🇧🇷 Português</span>
-                            </div>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-logo">
+                <span class="logo-text">&lt;Josiel/&gt;</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#servicos" class="nav-link">Serviços</a>
+                <a href="#tecnologias" class="nav-link">Tecnologias</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </div>
+            <div class="nav-cta">
+                <a href="#contato" class="btn btn-primary">Vamos Conversar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="code-bracket">{</span>
+                    Da Arquitetura à IA
+                    <span class="code-bracket">}</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Soluções de Software Robustas e Inteligentes
+                </p>
+                <p class="hero-description">
+                    Especialista em Java e Python com mais de 15 anos de experiência, transformando desafios complexos em produtos digitais eficientes. Atualmente buscando projetos freelance para colocar a mão na massa e construir soluções incríveis.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contato" class="btn btn-primary">Vamos Conversar</a>
+                    <a href="#servicos" class="btn btn-secondary">Meus Serviços</a>
+                </div>
+            </div>
+            <div class="hero-code">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control maximize"></span>
+                        </div>
+                        <div class="terminal-title">developer@portfolio:~$</div>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="code-line">
+                            <span class="prompt">$</span>
+                            <span class="command">whoami</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="output">Josiel - Backend Developer & AI Specialist</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="prompt">$</span>
+                            <span class="command">skills --show</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="output">Java • Python • Spring • FastAPI • AI/ML</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="prompt">$</span>
+                            <span class="command">experience --years</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="output">15+ years of building robust solutions</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="prompt">$</span>
+                            <span class="command typing">git status</span>
+                            <span class="cursor">|</span>
                         </div>
                     </div>
-                    <button class="md:hidden text-gray-800" id="mobile-menu-btn">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
                 </div>
             </div>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-4 py-2 space-y-4 border-t border-gray-200 bg-white">
-                <a href="#sobre" class="block hover:text-primary transition-colors duration-300" data-translate="nav.about">About</a>
-                <a href="#servicos" class="block hover:text-primary transition-colors duration-300" data-translate="nav.services">Services</a>
-                <a href="#contato" class="block hover:text-primary transition-colors duration-300" data-translate="nav.contact">Contact</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">Uma Paixão por Resolver Problemas</h2>
+                <div class="about-text">
+                    <p>Minha jornada no mundo da tecnologia começou em 2009. Com uma base sólida em Ciência da Computação e especializações em Liderança Ágil e Inteligência Artificial, sempre fui movido pela curiosidade e pelo desejo de aprender.</p>
+                    
+                    <p>Comecei com PHP, mas foi no ecossistema <strong>Java</strong> que construí minha carreira e me tornei um especialista sênior. Em 2016, assumi o desafio da liderança técnica, guiando equipes para entregar projetos de alto impacto.</p>
+                    
+                    <p>Hoje, como Tech Lead, meu maior prazer ainda é o mesmo do início: <strong>programar</strong>. Adoro estar na linha de frente, desenvolvendo produtos, resolvendo problemas e explorando novas fronteiras com <strong>IA Generativa</strong> e Python.</p>
+                    
+                    <p>É essa paixão por construir que me motiva a buscar novos desafios como freelancer.</p>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="file-name">career.js</span>
+                    </div>
+                    <pre><code class="language-javascript">
+const career = {
+  startYear: 2009,
+  currentRole: 'Tech Lead',
+  passion: 'Programming',
+  expertise: ['Java', 'Python', 'AI/ML'],
+  leadership: 'Agile Teams',
+  nextGoal: 'Freelance Projects'
+};
+
+function buildSolutions() {
+  return 'Robust & Scalable Systems';
+}
+
+// Always learning, always coding
+while (true) {
+  learnNewTechnology();
+  solveComplexProblems();
+  deliverValue();
+}
+                    </code></pre>
+                </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Hero Section -->
-    <section class="pt-24 pb-16 px-4 relative overflow-hidden">
-        <div class="hero-bg-animated"></div>
-        <div class="relative z-10">
-            <div class="container mx-auto max-w-6xl">
-                <div class="flex flex-col lg:flex-row items-center gap-12">
-                    <div class="flex-1 text-center lg:text-left">
-                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                            <span data-translate="hero.title1">From Architecture to AI:</span>
-                            <br>
-                            <span class="gradient-text" data-translate="hero.title2">Robust and Intelligent</span>
-                            <br>
-                            <span data-translate="hero.title3">Software Solutions</span>
-                        </h1>
-                        <p class="text-xl text-gray-600 mb-8 leading-relaxed" data-translate="hero.subtitle">
-                            Java and Python specialist with over 15 years of experience, transforming complex challenges into efficient digital products. Currently seeking freelance projects to get hands-on and build amazing solutions.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <a href="#contato" class="btn-primary ripple bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold inline-block text-center" data-translate="hero.cta1">
-                                Let's Talk
-                            </a>
-                            <a href="#servicos" class="btn-primary ripple border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-semibold inline-block text-center transition-all duration-300" data-translate="hero.cta2">
-                                My Services
-                            </a>
-                        </div>
-                    </div>
-                    <div class="flex-1 flex justify-center">
-                        <img src="assets/images/josiel.jpg" alt="Josiel Borges" class="rounded-full w-80 h-80 object-cover shadow-2xl border-4 border-primary/20">
-                    </div>
+    <!-- Services Section -->
+    <section id="servicos" class="services">
+        <div class="container">
+            <h2 class="section-title">Do Backend à Inteligência Artificial</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">Desenvolvimento Backend de Alta Performance</h3>
+                    <p class="service-description">Criação de sistemas robustos e escaláveis com Java (Spring, Quarkus) e Python (FastAPI).</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3 class="service-title">Soluções com IA Generativa</h3>
+                    <p class="service-description">Desenvolvimento de aplicações inteligentes utilizando as bibliotecas da OpenAI/Gemini e frameworks como o LangChain.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔗</div>
+                    <h3 class="service-title">Integração de Sistemas</h3>
+                    <p class="service-description">Arquitetura e implementação de integrações via APIs REST, SOAP e soluções de mensageria para conectar ecossistemas complexos.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💬</div>
+                    <h3 class="service-title">Chatbots Inteligentes</h3>
+                    <p class="service-description">Construção de chatbots para automação de atendimento e processos, oferecendo experiências de usuário fluidas e eficientes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3 class="service-title">Arquitetura de Software</h3>
+                    <p class="service-description">Desenho de arquiteturas de aplicação resilientes e bem documentadas, garantindo a longevidade e a manutenibilidade do seu projeto.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🗄️</div>
+                    <h3 class="service-title">Bancos de Dados</h3>
+                    <p class="service-description">Modelagem e otimização de bancos de dados relacionais para garantir a performance e a integridade dos dados.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Technologies Section -->
-    <section class="py-16 px-4 bg-white">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-translate="tech.title">Technologies I Master</h2>
-            <div class="overflow-x-auto scrollbar-hide" id="tech-carousel">
-                <div class="flex gap-8 min-w-max py-2 px-1" style="scroll-behavior:smooth;">
-                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
-                        <i class="devicon-java-plain tech-icon text-6xl mb-2"></i>
-                        <span class="text-sm font-medium">Java</span>
-                    </div>
-                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
-                        <i class="devicon-python-plain tech-icon text-6xl mb-2"></i>
-                        <span class="text-sm font-medium">Python</span>
-                    </div>
-                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
-                        <i class="devicon-spring-plain tech-icon text-6xl mb-2"></i>
-                        <span class="text-sm font-medium">Spring</span>
-                    </div>
-                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
-                        <i class="fas fa-bolt tech-icon text-6xl mb-2"></i>
-                        <span class="text-sm font-medium">Quarkus</span>
-                    </div>
-                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
-                        <i class="fas fa-rocket tech-icon text-6xl mb-2"></i>
-                        <span class="text-sm font-medium">FastAPI</span>
-                    </div>
-                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
-                        <i class="fas fa-brain tech-icon text-6xl mb-2"></i>
-                        <span class="text-sm font-medium">OpenAI</span>
-                    </div>
-                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
-                        <i class="fas fa-robot tech-icon text-6xl mb-2"></i>
-                        <span class="text-sm font-medium">Gemini</span>
-                    </div>
-                    <div class="flex flex-col items-center min-w-[100px]" data-aos="zoom-in">
-                        <i class="fas fa-link tech-icon text-6xl mb-2"></i>
-                        <span class="text-sm font-medium">LangChain</span>
-                    </div>
+    <section id="tecnologias" class="technologies">
+        <div class="container">
+            <h2 class="section-title">Tecnologias que Domino</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">Java</div>
+                    <span class="tech-name">Java</span>
                 </div>
-            </div>
-            <div class="flex justify-center gap-2 mt-4">
-                <button id="carousel-left" class="p-2 rounded-full bg-gray-200 hover:bg-primary hover:text-white transition"><i class="fas fa-chevron-left"></i></button>
-                <button id="carousel-right" class="p-2 rounded-full bg-gray-200 hover:bg-primary hover:text-white transition"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="sobre" class="py-16 px-4 bg-gray-50">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-translate="about.title">A Passion for Problem Solving</h2>
-            <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
-                <p class="text-lg md:text-xl leading-relaxed text-gray-700" data-translate="about.content">
-                    My journey in technology began in 2009. With a solid foundation in Computer Science and specializations in Agile Leadership and Artificial Intelligence, I've always been driven by curiosity and the desire to learn. I started with PHP, but it was in the <strong class="text-primary">Java</strong> ecosystem that I built my career and became a senior specialist. In 2016, I took on the challenge of technical leadership, guiding teams to deliver high-impact projects. Today, as a Tech Lead, my greatest pleasure is still the same as at the beginning: <strong class="text-primary">programming</strong>. I love being on the front lines, developing products, solving problems, and exploring new frontiers with <strong class="text-primary">Generative AI</strong> and Python. It's this passion for building that motivates me to seek new challenges as a freelancer.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="servicos" class="py-16 px-4 bg-white">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-translate="services.title">From Backend to Artificial Intelligence</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 shadow-lg" data-aos="fade-up">
-                    <div class="text-primary text-4xl mb-4">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3" data-translate="services.service1.title">High-Performance Backend Development</h3>
-                    <p class="text-gray-600" data-translate="services.service1.description">Creation of robust and scalable systems with Java (Spring, Quarkus) and Python (FastAPI).</p>
+                <div class="tech-item">
+                    <div class="tech-icon">Python</div>
+                    <span class="tech-name">Python</span>
                 </div>
-
-                <!-- Service 2 -->
-                <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 shadow-lg" data-aos="fade-up">
-                    <div class="text-primary text-4xl mb-4">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3" data-translate="services.service2.title">Generative AI Solutions</h3>
-                    <p class="text-gray-600" data-translate="services.service2.description">Development of intelligent applications using OpenAI/Gemini libraries and frameworks like LangChain.</p>
+                <div class="tech-item">
+                    <div class="tech-icon">Spring</div>
+                    <span class="tech-name">Spring</span>
                 </div>
-
-                <!-- Service 3 -->
-                <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 shadow-lg" data-aos="fade-up">
-                    <div class="text-primary text-4xl mb-4">
-                        <i class="fas fa-plug"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3" data-translate="services.service3.title">System Integration</h3>
-                    <p class="text-gray-600" data-translate="services.service3.description">Architecture and implementation of integrations via REST APIs, SOAP, and messaging solutions to connect complex ecosystems.</p>
+                <div class="tech-item">
+                    <div class="tech-icon">Quarkus</div>
+                    <span class="tech-name">Quarkus</span>
                 </div>
-
-                <!-- Service 4 -->
-                <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 shadow-lg" data-aos="fade-up">
-                    <div class="text-primary text-4xl mb-4">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3" data-translate="services.service4.title">Intelligent Chatbots</h3>
-                    <p class="text-gray-600" data-translate="services.service4.description">Building chatbots for customer service automation and processes, offering fluid and efficient user experiences.</p>
+                <div class="tech-item">
+                    <div class="tech-icon">FastAPI</div>
+                    <span class="tech-name">FastAPI</span>
                 </div>
-
-                <!-- Service 5 -->
-                <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 shadow-lg" data-aos="fade-up">
-                    <div class="text-primary text-4xl mb-4">
-                        <i class="fas fa-sitemap"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3" data-translate="services.service5.title">Software Architecture</h3>
-                    <p class="text-gray-600" data-translate="services.service5.description">Design of resilient and well-documented application architectures, ensuring the longevity and maintainability of your project.</p>
+                <div class="tech-item">
+                    <div class="tech-icon">OpenAI</div>
+                    <span class="tech-name">OpenAI</span>
                 </div>
-
-                <!-- Service 6 -->
-                <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 shadow-lg" data-aos="fade-up">
-                    <div class="text-primary text-4xl mb-4">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3" data-translate="services.service6.title">Databases</h3>
-                    <p class="text-gray-600" data-translate="services.service6.description">Modeling and optimization of relational databases to ensure performance and data integrity.</p>
+                <div class="tech-item">
+                    <div class="tech-icon">Gemini</div>
+                    <span class="tech-name">Google Gemini</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">LangChain</div>
+                    <span class="tech-name">LangChain</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="py-16 px-4 bg-gray-50">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-translate="skills.title">My Toolbox</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Skills Category 1 -->
-                <div class="bg-white rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-bold mb-4 text-primary" data-translate="skills.categories.languages">Languages</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center">
-                            <i class="devicon-java-plain text-2xl mr-3"></i>
-                            <span>Java</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="devicon-python-plain text-2xl mr-3"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-database text-2xl mr-3"></i>
-                            <span>SQL</span>
-                        </div>
+    <section class="skills">
+        <div class="container">
+            <h2 class="section-title">Minha Caixa de Ferramentas</h2>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3 class="category-title">Linguagens</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
                     </div>
                 </div>
-
-                <!-- Skills Category 2 -->
-                <div class="bg-white rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-bold mb-4 text-primary" data-translate="skills.categories.frameworks">Backend Frameworks</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center">
-                            <i class="devicon-spring-plain text-2xl mr-3"></i>
-                            <span>Spring Boot</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-bolt text-2xl mr-3"></i>
-                            <span>Quarkus</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-rocket text-2xl mr-3"></i>
-                            <span>FastAPI</span>
-                        </div>
+                <div class="skills-category">
+                    <h3 class="category-title">Frameworks Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">Quarkus</span>
+                        <span class="skill-tag">Java EE</span>
+                        <span class="skill-tag">FastAPI</span>
                     </div>
                 </div>
-
-                <!-- Skills Category 3 -->
-                <div class="bg-white rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-bold mb-4 text-primary" data-translate="skills.categories.ai">Artificial Intelligence</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center">
-                            <i class="fas fa-link text-2xl mr-3"></i>
-                            <span>LangChain</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-brain text-2xl mr-3"></i>
-                            <span>OpenAI API</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-robot text-2xl mr-3"></i>
-                            <span>Gemini API</span>
-                        </div>
+                <div class="skills-category">
+                    <h3 class="category-title">Inteligência Artificial</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">OpenAI API</span>
+                        <span class="skill-tag">Gemini API</span>
+                        <span class="skill-tag">RAG</span>
                     </div>
                 </div>
-
-                <!-- Skills Category 4 -->
-                <div class="bg-white rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-bold mb-4 text-primary" data-translate="skills.categories.databases">Databases</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center">
-                            <i class="devicon-postgresql-plain text-2xl mr-3"></i>
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="devicon-mysql-plain text-2xl mr-3"></i>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="devicon-oracle-original text-2xl mr-3"></i>
-                            <span>Oracle</span>
-                        </div>
+                <div class="skills-category">
+                    <h3 class="category-title">Bancos de Dados</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Oracle</span>
+                        <span class="skill-tag">SQL Server</span>
                     </div>
                 </div>
-
-                <!-- Skills Category 5 -->
-                <div class="bg-white rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-bold mb-4 text-primary" data-translate="skills.categories.integrations">Integrations & APIs</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center">
-                            <i class="fas fa-globe text-2xl mr-3"></i>
-                            <span>REST</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-exchange-alt text-2xl mr-3"></i>
-                            <span>SOAP</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-rabbit text-2xl mr-3"></i>
-                            <span>RabbitMQ</span>
-                        </div>
+                <div class="skills-category">
+                    <h3 class="category-title">Integrações e APIs</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">REST</span>
+                        <span class="skill-tag">SOAP</span>
+                        <span class="skill-tag">RabbitMQ</span>
+                        <span class="skill-tag">Kafka</span>
                     </div>
                 </div>
-
-                <!-- Skills Category 6 -->
-                <div class="bg-white rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-bold mb-4 text-primary" data-translate="skills.categories.methodologies">Methodologies</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center">
-                            <i class="fas fa-users text-2xl mr-3"></i>
-                            <span data-translate="skills.methodologies.agile">Agile Leadership</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-tasks text-2xl mr-3"></i>
-                            <span>Scrum</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-columns text-2xl mr-3"></i>
-                            <span>Kanban</span>
-                        </div>
+                <div class="skills-category">
+                    <h3 class="category-title">Metodologias</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Liderança Ágil</span>
+                        <span class="skill-tag">Scrum</span>
+                        <span class="skill-tag">Kanban</span>
                     </div>
                 </div>
             </div>
@@ -474,296 +288,64 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contato" class="py-16 px-4 bg-white">
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8" data-translate="contact.title">Have a challenge in mind?</h2>
-            <p class="text-xl text-gray-600 mb-8 leading-relaxed" data-translate="contact.subtitle">
-                If you're looking for a developer who combines deep technical knowledge, leadership experience, and a genuine passion for creating solutions, let's talk. I'm ready to help bring your project to life.
-            </p>
-            <a href="mailto:chrys.jo@gmail.com" class="btn-primary ripple bg-primary hover:bg-blue-600 text-white px-12 py-4 rounded-lg font-semibold inline-block text-xl mb-8" data-translate="contact.cta">
-                Get in Touch
-            </a>
-            
-            <!-- Social Links -->
-            <div class="flex justify-center space-x-8">
-                <a href="mailto:chrys.jo@gmail.com" class="text-3xl text-gray-400 hover:text-primary transition-colors duration-300 hover:scale-110 transform" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/josieleliseuborges/" target="_blank" class="text-3xl text-gray-400 hover:text-primary transition-colors duration-300 hover:scale-110 transform" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/josielborges/" target="_blank" class="text-3xl text-gray-400 hover:text-primary transition-colors duration-300 hover:scale-110 transform" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="section-title">Tem um desafio em mente?</h2>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>Se você busca um desenvolvedor que une profundo conhecimento técnico, experiência em liderança e uma paixão genuína por criar soluções, vamos conversar. Estou pronto para ajudar a tirar seu projeto do papel.</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-label">Email:</span>
+                            <a href="mailto:chrys.jo@gmail.com" class="contact-link">chrys.jo@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">LinkedIn:</span>
+                            <a href="https://www.linkedin.com/in/josieleliseuborges/" class="contact-link" target="_blank">linkedin.com/in/josieleliseuborges</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">GitHub:</span>
+                            <a href="https://github.com/josielborges/" class="contact-link" target="_blank">github.com/josielborges</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <a href="mailto:chrys.jo@gmail.com" class="btn btn-primary btn-large">Entre em Contato</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 px-4 border-t border-gray-200 bg-gray-50">
-        <div class="container mx-auto text-center">
-            <p class="text-gray-600">
-                © <span id="current-year"></span> Josiel Borges. <span data-translate="footer.rights">All rights reserved.</span>
-            </p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">&lt;Josiel/&gt;</span>
+                    <p class="footer-tagline">Da Arquitetura à IA</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Serviços</h4>
+                        <a href="#servicos">Backend Development</a>
+                        <a href="#servicos">AI Solutions</a>
+                        <a href="#servicos">System Integration</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contato</h4>
+                        <a href="mailto:chrys.jo@gmail.com">Email</a>
+                        <a href="https://www.linkedin.com/in/josieleliseuborges/" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/josielborges/" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Josiel. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Scroll Progress Bar -->
-    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-primary z-[9999] transition-all duration-200" style="width:0;"></div>
-
-    <script>
-        // Translation data
-        const translations = {
-            en: {
-                // Navigation
-                "nav.about": "About",
-                "nav.services": "Services", 
-                "nav.contact": "Contact",
-                
-                // Hero
-                "hero.title1": "From Architecture to AI:",
-                "hero.title2": "Robust and Intelligent",
-                "hero.title3": "Software Solutions",
-                "hero.subtitle": "Java and Python specialist with over 15 years of experience, transforming complex challenges into efficient digital products. Currently seeking freelance projects to get hands-on and build amazing solutions.",
-                "hero.cta1": "Let's Talk",
-                "hero.cta2": "My Services",
-                
-                // Technologies
-                "tech.title": "Technologies I Master",
-                
-                // About
-                "about.title": "A Passion for Problem Solving",
-                "about.content": "My journey in technology began in 2009. With a solid foundation in Computer Science and specializations in Agile Leadership and Artificial Intelligence, I've always been driven by curiosity and the desire to learn. I started with PHP, but it was in the Java ecosystem that I built my career and became a senior specialist. In 2016, I took on the challenge of technical leadership, guiding teams to deliver high-impact projects. Today, as a Tech Lead, my greatest pleasure is still the same as at the beginning: programming. I love being on the front lines, developing products, solving problems, and exploring new frontiers with Generative AI and Python. It's this passion for building that motivates me to seek new challenges as a freelancer.",
-                
-                // Services
-                "services.title": "From Backend to Artificial Intelligence",
-                "services.service1.title": "High-Performance Backend Development",
-                "services.service1.description": "Creation of robust and scalable systems with Java (Spring, Quarkus) and Python (FastAPI).",
-                "services.service2.title": "Generative AI Solutions",
-                "services.service2.description": "Development of intelligent applications using OpenAI/Gemini libraries and frameworks like LangChain.",
-                "services.service3.title": "System Integration",
-                "services.service3.description": "Architecture and implementation of integrations via REST APIs, SOAP, and messaging solutions to connect complex ecosystems.",
-                "services.service4.title": "Intelligent Chatbots",
-                "services.service4.description": "Building chatbots for customer service automation and processes, offering fluid and efficient user experiences.",
-                "services.service5.title": "Software Architecture",
-                "services.service5.description": "Design of resilient and well-documented application architectures, ensuring the longevity and maintainability of your project.",
-                "services.service6.title": "Databases",
-                "services.service6.description": "Modeling and optimization of relational databases to ensure performance and data integrity.",
-                
-                // Skills
-                "skills.title": "My Toolbox",
-                "skills.categories.languages": "Languages",
-                "skills.categories.frameworks": "Backend Frameworks",
-                "skills.categories.ai": "Artificial Intelligence",
-                "skills.categories.databases": "Databases",
-                "skills.categories.integrations": "Integrations & APIs",
-                "skills.categories.methodologies": "Methodologies",
-                "skills.methodologies.agile": "Agile Leadership",
-                
-                // Contact
-                "contact.title": "Have a challenge in mind?",
-                "contact.subtitle": "If you're looking for a developer who combines deep technical knowledge, leadership experience, and a genuine passion for creating solutions, let's talk. I'm ready to help bring your project to life.",
-                "contact.cta": "Get in Touch",
-                
-                // Footer
-                "footer.rights": "All rights reserved."
-            },
-            pt: {
-                // Navigation
-                "nav.about": "Sobre",
-                "nav.services": "Serviços",
-                "nav.contact": "Contato",
-                
-                // Hero
-                "hero.title1": "Da Arquitetura à IA:",
-                "hero.title2": "Soluções de Software",
-                "hero.title3": "Robustas e Inteligentes",
-                "hero.subtitle": "Especialista em Java e Python com mais de 15 anos de experiência, transformando desafios complexos em produtos digitais eficientes. Atualmente buscando projetos freelance para colocar a mão na massa e construir soluções incríveis.",
-                "hero.cta1": "Vamos Conversar",
-                "hero.cta2": "Meus Serviços",
-                
-                // Technologies
-                "tech.title": "Tecnologias que Domino",
-                
-                // About
-                "about.title": "Uma Paixão por Resolver Problemas",
-                "about.content": "Minha jornada no mundo da tecnologia começou em 2009. Com uma base sólida em Ciência da Computação e especializações em Liderança Ágil e Inteligência Artificial, sempre fui movido pela curiosidade e pelo desejo de aprender. Comecei com PHP, mas foi no ecossistema Java que construí minha carreira e me tornei um especialista sênior. Em 2016, assumi o desafio da liderança técnica, guiando equipes para entregar projetos de alto impacto. Hoje, como Tech Lead, meu maior prazer ainda é o mesmo do início: programar. Adoro estar na linha de frente, desenvolvendo produtos, resolvendo problemas e explorando novas fronteiras com IA Generativa e Python. É essa paixão por construir que me motiva a buscar novos desafios como freelancer.",
-                
-                // Services
-                "services.title": "Do Backend à Inteligência Artificial",
-                "services.service1.title": "Desenvolvimento Backend de Alta Performance",
-                "services.service1.description": "Criação de sistemas robustos e escaláveis com Java (Spring, Quarkus) e Python (FastAPI).",
-                "services.service2.title": "Soluções com IA Generativa",
-                "services.service2.description": "Desenvolvimento de aplicações inteligentes utilizando as bibliotecas da OpenAI/Gemini e frameworks como o LangChain.",
-                "services.service3.title": "Integração de Sistemas",
-                "services.service3.description": "Arquitetura e implementação de integrações via APIs REST, SOAP e soluções de mensageria para conectar ecossistemas complexos.",
-                "services.service4.title": "Chatbots Inteligentes",
-                "services.service4.description": "Construção de chatbots para automação de atendimento e processos, oferecendo experiências de usuário fluidas e eficientes.",
-                "services.service5.title": "Arquitetura de Software",
-                "services.service5.description": "Desenho de arquiteturas de aplicação resilientes e bem documentadas, garantindo a longevidade e a manutenibilidade do seu projeto.",
-                "services.service6.title": "Bancos de Dados",
-                "services.service6.description": "Modelagem e otimização de bancos de dados relacionais para garantir a performance e a integridade dos dados.",
-                
-                // Skills
-                "skills.title": "Minha Caixa de Ferramentas",
-                "skills.categories.languages": "Linguagens",
-                "skills.categories.frameworks": "Frameworks Backend",
-                "skills.categories.ai": "Inteligência Artificial",
-                "skills.categories.databases": "Bancos de Dados",
-                "skills.categories.integrations": "Integrações e APIs",
-                "skills.categories.methodologies": "Metodologias",
-                "skills.methodologies.agile": "Liderança Ágil",
-                
-                // Contact
-                "contact.title": "Tem um desafio em mente?",
-                "contact.subtitle": "Se você busca um desenvolvedor que une profundo conhecimento técnico, experiência em liderança e uma paixão genuína por criar soluções, vamos conversar. Estou pronto para ajudar a tirar seu projeto do papel.",
-                "contact.cta": "Entre em Contato",
-                
-                // Footer
-                "footer.rights": "Todos os direitos reservados."
-            }
-        };
-
-        // Language management
-        let currentLanguage = 'en';
-
-        function updateLanguage(lang) {
-            currentLanguage = lang;
-            document.documentElement.lang = lang;
-            
-            // Update current language display
-            document.getElementById('current-lang').textContent = lang.toUpperCase();
-            
-            // Update active state in dropdown
-            document.querySelectorAll('.language-option').forEach(option => {
-                option.classList.remove('active');
-            });
-            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
-            
-            // Update all translatable elements
-            document.querySelectorAll('[data-translate]').forEach(element => {
-                const key = element.getAttribute('data-translate');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
-            
-            // Update page title and meta description
-            if (lang === 'en') {
-                document.title = 'Josiel Borges - Full Stack Developer & AI Specialist';
-                document.querySelector('meta[name="description"]').setAttribute('content', 'Java and Python specialist with over 15 years of experience. Robust and intelligent software solutions with Generative AI.');
-            } else {
-                document.title = 'Josiel Borges - Desenvolvedor Full Stack & Especialista em IA';
-                document.querySelector('meta[name="description"]').setAttribute('content', 'Especialista em Java e Python com mais de 15 anos de experiência. Soluções de software robustas e inteligentes com IA Generativa.');
-            }
-            
-            // Save language preference
-            localStorage.setItem('preferred-language', lang);
-        }
-
-        // Language switcher functionality
-        const languageBtn = document.getElementById('language-btn');
-        const languageDropdown = document.getElementById('language-dropdown');
-
-        languageBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            languageDropdown.classList.toggle('hidden');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', () => {
-            languageDropdown.classList.add('hidden');
-        });
-
-        // Language option selection
-        document.querySelectorAll('.language-option').forEach(option => {
-            option.addEventListener('click', () => {
-                const lang = option.getAttribute('data-lang');
-                updateLanguage(lang);
-                languageDropdown.classList.add('hidden');
-            });
-        });
-
-        // Initialize language from localStorage or default to English
-        const savedLanguage = localStorage.getItem('preferred-language') || 'en';
-        updateLanguage(savedLanguage);
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Set current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.classList.add('shadow-lg');
-            } else {
-                header.classList.remove('shadow-lg');
-            }
-        });
-
-        // Scroll progress bar
-        window.addEventListener('scroll', () => {
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrolled = (window.scrollY / docHeight) * 100;
-            document.getElementById('scroll-progress').style.width = scrolled + '%';
-        });
-
-        // Carrossel de tecnologias
-        const carousel = document.querySelector('#tech-carousel > div');
-        document.getElementById('carousel-left').onclick = () => carousel.scrollBy({left: -200, behavior: 'smooth'});
-        document.getElementById('carousel-right').onclick = () => carousel.scrollBy({left: 200, behavior: 'smooth'});
-
-        // Ripple effect
-        function createRipple(event) {
-            const button = event.currentTarget;
-            const circle = document.createElement('span');
-            const diameter = Math.max(button.clientWidth, button.clientHeight);
-            const radius = diameter / 2;
-            circle.style.width = circle.style.height = `${diameter}px`;
-            circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
-            circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
-            circle.classList.add('ripple-effect');
-            button.appendChild(circle);
-            setTimeout(() => circle.remove(), 600);
-        }
-        document.querySelectorAll('.ripple').forEach(btn => {
-            btn.addEventListener('click', createRipple);
-        });
-    </script>
-
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({ once: true, duration: 900, offset: 60 });
-    </script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html> 

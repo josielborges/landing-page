@@ -1,0 +1,273 @@
+{
+  "designSystem": {
+    "name": "Developer Platform Design System",
+    "theme": "dark-tech",
+    "description": "A modern, developer-focused design system with terminal aesthetics and code-centric visual language",
+    
+    "colorPalette": {
+      "primary": {
+        "background": "#2d3748",
+        "backgroundDark": "#1a202c",
+        "backgroundLight": "#4a5568"
+      },
+      "accent": {
+        "green": "#00ff88",
+        "greenMuted": "#38a169",
+        "terminal": "#00ff00"
+      },
+      "text": {
+        "primary": "#ffffff",
+        "secondary": "#a0aec0",
+        "muted": "#718096"
+      },
+      "code": {
+        "background": "#1a1a1a",
+        "border": "#2d3748",
+        "syntax": {
+          "keyword": "#ff6b6b",
+          "string": "#4ecdc4",
+          "comment": "#6c757d",
+          "variable": "#ffd93d"
+        }
+      }
+    },
+
+    "typography": {
+      "fontFamilies": {
+        "primary": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "JetBrains Mono, 'Fira Code', Consolas, monospace",
+        "display": "Inter, system-ui, sans-serif"
+      },
+      "scale": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
+        "4xl": "2.25rem",
+        "5xl": "3rem"
+      },
+      "weights": {
+        "normal": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700
+      }
+    },
+
+    "spacing": {
+      "xs": "0.25rem",
+      "sm": "0.5rem",
+      "md": "1rem",
+      "lg": "1.5rem",
+      "xl": "2rem",
+      "2xl": "3rem",
+      "3xl": "4rem",
+      "4xl": "6rem",
+      "5xl": "8rem"
+    },
+
+    "layout": {
+      "maxWidth": "1200px",
+      "containerPadding": "1rem",
+      "sectionSpacing": "6rem",
+      "gridGap": "2rem"
+    },
+
+    "components": {
+      "hero": {
+        "pattern": "full-width-centered",
+        "elements": [
+          {
+            "type": "headline",
+            "style": "large-display-text",
+            "features": ["syntax-highlighting", "code-brackets", "terminal-cursor"]
+          },
+          {
+            "type": "subheadline", 
+            "style": "muted-description"
+          },
+          {
+            "type": "cta-buttons",
+            "style": "primary-accent-green"
+          },
+          {
+            "type": "code-preview",
+            "style": "terminal-window",
+            "features": ["syntax-highlighting", "line-numbers", "file-tabs"]
+          }
+        ]
+      },
+
+      "navigation": {
+        "pattern": "horizontal-dark",
+        "features": ["logo-left", "menu-center", "cta-right"],
+        "styling": "minimal-borders"
+      },
+
+      "codeBlock": {
+        "pattern": "terminal-window",
+        "features": [
+          "window-controls",
+          "file-tabs",
+          "line-numbers",
+          "syntax-highlighting",
+          "dark-background"
+        ],
+        "styling": {
+          "background": "dark-gradient",
+          "border": "subtle-rounded",
+          "padding": "generous"
+        }
+      },
+
+      "featureSection": {
+        "pattern": "alternating-layout",
+        "elements": [
+          {
+            "type": "text-content",
+            "position": "left-or-right",
+            "features": ["headline", "description", "bullet-points", "cta-link"]
+          },
+          {
+            "type": "visual-content",
+            "position": "opposite",
+            "options": ["code-block", "terminal-window", "diagram", "interface-mockup"]
+          }
+        ]
+      },
+
+      "logoGrid": {
+        "pattern": "centered-grid",
+        "styling": "grayscale-with-hover-color",
+        "layout": "responsive-columns"
+      },
+
+      "footer": {
+        "pattern": "multi-column-links",
+        "styling": "dark-background",
+        "sections": ["company", "resources", "legal", "support", "platform"]
+      }
+    },
+
+    "visualElements": {
+      "codeAesthetics": {
+        "syntaxHighlighting": true,
+        "lineNumbers": true,
+        "terminalPrompts": true,
+        "codeBrackets": "curly-braces",
+        "fileExtensions": ["js", "html", "css", "json"]
+      },
+
+      "terminalElements": {
+        "windowControls": "mac-style-dots",
+        "commandPrompt": "$ ",
+        "cursorBlink": true,
+        "tabInterface": true
+      },
+
+      "animations": {
+        "typewriter": "code-typing-effect",
+        "hover": "subtle-glow",
+        "transitions": "smooth-ease"
+      },
+
+      "decorativeElements": {
+        "gridPatterns": "subtle-dots",
+        "gradients": "dark-to-darker",
+        "glowEffects": "accent-color",
+        "borderRadius": "moderate-rounded"
+      }
+    },
+
+    "contentStructure": {
+      "sectionOrder": [
+        "hero-with-code-preview",
+        "logo-grid",
+        "feature-highlight-1",
+        "feature-highlight-2", 
+        "feature-highlight-3",
+        "tool-showcase",
+        "community-section",
+        "footer"
+      ],
+
+      "contentTypes": {
+        "headlines": {
+          "style": "large-bold-with-code-syntax",
+          "pattern": "action-oriented-developer-language"
+        },
+        "descriptions": {
+          "style": "technical-but-accessible",
+          "length": "concise-paragraphs"
+        },
+        "codeExamples": {
+          "style": "realistic-working-code",
+          "languages": ["javascript", "html", "css", "json"]
+        }
+      }
+    },
+
+    "interactionPatterns": {
+      "buttons": {
+        "primary": "accent-green-with-hover-glow",
+        "secondary": "outline-with-hover-fill"
+      },
+      "links": {
+        "style": "underline-on-hover",
+        "color": "accent-green"
+      },
+      "codeBlocks": {
+        "interactions": ["copy-button", "expand-collapse", "tab-switching"]
+      }
+    },
+
+    "responsiveDesign": {
+      "breakpoints": {
+        "mobile": "320px",
+        "tablet": "768px", 
+        "desktop": "1024px",
+        "wide": "1200px"
+      },
+      "adaptations": {
+        "mobile": "stack-vertically",
+        "tablet": "two-column-grid",
+        "desktop": "full-layout"
+      }
+    },
+
+    "accessibilityFeatures": {
+      "contrast": "high-contrast-dark-theme",
+      "focusStates": "visible-accent-outlines",
+      "screenReader": "semantic-html-structure"
+    }
+  },
+
+  "implementationGuidelines": {
+    "keyPrinciples": [
+      "Developer-first visual language",
+      "Terminal/IDE aesthetic inspiration", 
+      "Code as a design element",
+      "Dark theme with accent colors",
+      "Minimal but functional"
+    ],
+
+    "mustHaveElements": [
+      "Syntax-highlighted code blocks",
+      "Terminal-style windows",
+      "Monospace font usage",
+      "Green accent color",
+      "Dark background theme"
+    ],
+
+    "layoutApproach": [
+      "Full-width hero sections",
+      "Alternating content/visual layout",
+      "Generous whitespace",
+      "Centered content with max-width",
+      "Grid-based organization"
+    ]
+  }
+}
