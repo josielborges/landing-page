@@ -197,6 +197,11 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
+.nav-link:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 /* Hero Section */
 .hero {
     padding: calc(var(--spacing-5xl) + 4rem) 0 var(--spacing-4xl);
@@ -407,6 +412,10 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .tech-item::before {
@@ -431,14 +440,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tech-icon {
-    font-family: var(--font-mono);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 2rem;
-    font-weight: 600;
-    color: var(--accent-green);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 0;
 }
 
 .tech-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     font-weight: 500;
     color: var(--text-primary);
 }
@@ -547,8 +560,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-icon {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-lg);
+    font-size: 2.5rem !important;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    vertical-align: middle;
+    margin: 0 auto var(--spacing-lg) auto;
+    color: var(--accent-green);
 }
 
 .service-title {
@@ -884,6 +906,16 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 0.95rem;
         flex: 0 0 auto;
         white-space: nowrap;
+    }
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .tech-item {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    .tech-icon {
+        margin-bottom: 0.25rem;
     }
 }
 
