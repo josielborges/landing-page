@@ -1055,9 +1055,11 @@ html {
     padding: 0.15rem 0.4rem;
     min-width: 0;
     animation: fadeInMenu 0.2s;
+    pointer-events: none;
 }
 .hamburger-menu.open .hamburger-dropdown {
     display: block;
+    pointer-events: auto;
 }
 @keyframes fadeInMenu {
     from { opacity: 0; transform: translateY(-10px); }
