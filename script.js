@@ -507,4 +507,202 @@ window.addEventListener('scroll', throttle(() => {
 
 console.log('🚀 Developer Platform Landing Page loaded successfully!');
 console.log('💻 Built with modern web technologies');
-console.log('🎨 Following Developer Platform Design System'); 
+console.log('🎨 Following Developer Platform Design System');
+
+// --- Internationalization (i18n) ---
+const translations = {
+    en: {
+        nav: ["About", "Services", "Technologies", "Contact"],
+        hero: {
+            title: "From Architecture to AI",
+            subtitle: "Robust and Intelligent Software Solutions",
+            description: "Java and Python specialist with over 15 years of experience, turning complex challenges into efficient digital products. Currently seeking freelance projects to get hands-on and build amazing solutions.",
+            cta1: "Let's Talk",
+            cta2: "My Services"
+        },
+        techTitle: "Technologies I Master",
+        about: {
+            title: "A Passion for Solving Problems",
+            text: [
+                "My journey in technology began in 2009. With a solid foundation in Computer Science and specializations in Agile Leadership and Artificial Intelligence, I've always been driven by curiosity and a desire to learn.",
+                "I started with PHP, but it was in the Java ecosystem that I built my career and became a senior specialist. In 2016, I took on the challenge of technical leadership, guiding teams to deliver high-impact projects.",
+                "Today, as a Tech Lead, my greatest pleasure is still the same as in the beginning: programming. I love being on the front lines, developing products, solving problems, and exploring new frontiers with Generative AI and Python.",
+                "This passion for building motivates me to seek new challenges as a freelancer."
+            ]
+        },
+        servicesTitle: "From Backend to Artificial Intelligence",
+        services: [
+            {
+                title: "High-Performance Backend Development",
+                desc: "Building robust and scalable systems with Java (Spring, Quarkus) and Python (FastAPI)."
+            },
+            {
+                title: "Generative AI Solutions",
+                desc: "Developing intelligent applications using OpenAI/Gemini libraries and frameworks like LangChain."
+            },
+            {
+                title: "System Integration",
+                desc: "Architecture and implementation of integrations via REST APIs, SOAP, and messaging solutions to connect complex ecosystems."
+            },
+            {
+                title: "Intelligent Chatbots",
+                desc: "Building chatbots for automating support and processes, offering smooth and efficient user experiences."
+            },
+            {
+                title: "Software Architecture",
+                desc: "Designing resilient and well-documented application architectures, ensuring longevity and maintainability."
+            },
+            {
+                title: "Databases",
+                desc: "Modeling and optimizing relational databases to ensure performance and data integrity."
+            }
+        ],
+        skillsTitle: "My Toolbox",
+        skills: {
+            languages: "Languages",
+            frameworks: "Backend Frameworks",
+            ai: "Artificial Intelligence",
+            databases: "Databases",
+            integrations: "Integrations & APIs",
+            methods: "Methodologies"
+        },
+        contactTitle: "Got a challenge in mind?",
+        contactText: "If you are looking for a developer who combines deep technical knowledge, leadership experience, and a genuine passion for creating solutions, let's talk. I'm ready to help bring your project to life.",
+        contactBtn: "Contact Me",
+        footer: {
+            services: "Services",
+            contact: "Contact"
+        }
+    },
+    pt: {
+        nav: ["Sobre", "Serviços", "Tecnologias", "Contato"],
+        hero: {
+            title: "Da Arquitetura à IA",
+            subtitle: "Soluções de Software Robustas e Inteligentes",
+            description: "Especialista em Java e Python com mais de 15 anos de experiência, transformando desafios complexos em produtos digitais eficientes. Atualmente buscando projetos freelance para colocar a mão na massa e construir soluções incríveis.",
+            cta1: "Vamos Conversar",
+            cta2: "Meus Serviços"
+        },
+        techTitle: "Tecnologias que Domino",
+        about: {
+            title: "Uma Paixão por Resolver Problemas",
+            text: [
+                "Minha jornada no mundo da tecnologia começou em 2009. Com uma base sólida em Ciência da Computação e especializações em Liderança Ágil e Inteligência Artificial, sempre fui movido pela curiosidade e pelo desejo de aprender.",
+                "Comecei com PHP, mas foi no ecossistema Java que construí minha carreira e me tornei um especialista sênior. Em 2016, assumi o desafio da liderança técnica, guiando equipes para entregar projetos de alto impacto.",
+                "Hoje, como Tech Lead, meu maior prazer ainda é o mesmo do início: programar. Adoro estar na linha de frente, desenvolvendo produtos, resolvendo problemas e explorando novas fronteiras com IA Generativa e Python.",
+                "É essa paixão por construir que me motiva a buscar novos desafios como freelancer."
+            ]
+        },
+        servicesTitle: "Do Backend à Inteligência Artificial",
+        services: [
+            {
+                title: "Desenvolvimento Backend de Alta Performance",
+                desc: "Criação de sistemas robustos e escaláveis com Java (Spring, Quarkus) e Python (FastAPI)."
+            },
+            {
+                title: "Soluções com IA Generativa",
+                desc: "Desenvolvimento de aplicações inteligentes utilizando as bibliotecas da OpenAI/Gemini e frameworks como o LangChain."
+            },
+            {
+                title: "Integração de Sistemas",
+                desc: "Arquitetura e implementação de integrações via APIs REST, SOAP e soluções de mensageria para conectar ecossistemas complexos."
+            },
+            {
+                title: "Chatbots Inteligentes",
+                desc: "Construção de chatbots para automação de atendimento e processos, oferecendo experiências de usuário fluidas e eficientes."
+            },
+            {
+                title: "Arquitetura de Software",
+                desc: "Desenho de arquiteturas de aplicação resilientes e bem documentadas, garantindo a longevidade e a manutenibilidade do seu projeto."
+            },
+            {
+                title: "Bancos de Dados",
+                desc: "Modelagem e otimização de bancos de dados relacionais para garantir a performance e a integridade dos dados."
+            }
+        ],
+        skillsTitle: "Minha Caixa de Ferramentas",
+        skills: {
+            languages: "Linguagens",
+            frameworks: "Frameworks Backend",
+            ai: "Inteligência Artificial",
+            databases: "Bancos de Dados",
+            integrations: "Integrações e APIs",
+            methods: "Metodologias"
+        },
+        contactTitle: "Tem um desafio em mente?",
+        contactText: "Se você busca um desenvolvedor que une profundo conhecimento técnico, experiência em liderança e uma paixão genuína por criar soluções, vamos conversar. Estou pronto para ajudar a tirar seu projeto do papel.",
+        contactBtn: "Entre em Contato",
+        footer: {
+            services: "Serviços",
+            contact: "Contato"
+        }
+    }
+};
+
+function setLanguage(lang) {
+    const t = translations[lang];
+    // Navbar
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach((el, i) => el.textContent = t.nav[i]);
+    // Hero
+    document.querySelector('.hero-title').innerHTML = `<span class="code-bracket">{</span> ${t.hero.title} <span class="code-bracket">}</span>`;
+    document.querySelector('.hero-subtitle').textContent = t.hero.subtitle;
+    document.querySelector('.hero-description').textContent = t.hero.description;
+    document.querySelector('.hero-cta .btn-primary').textContent = t.hero.cta1;
+    document.querySelector('.hero-cta .btn-secondary').textContent = t.hero.cta2;
+    // Tecnologias
+    document.querySelector('.technologies .section-title').textContent = t.techTitle;
+    // About
+    document.querySelector('.about .section-title').textContent = t.about.title;
+    const aboutText = document.querySelector('.about-text');
+    aboutText.innerHTML = t.about.text.map(p => `<p>${p}</p>`).join('');
+    // Serviços
+    document.querySelector('.services .section-title').textContent = t.servicesTitle;
+    const serviceCards = document.querySelectorAll('.service-card');
+    t.services.forEach((serv, i) => {
+        serviceCards[i].querySelector('.service-title').textContent = serv.title;
+        serviceCards[i].querySelector('.service-description').textContent = serv.desc;
+    });
+    // Skills
+    document.querySelector('.skills .section-title').textContent = t.skillsTitle;
+    const skillCats = document.querySelectorAll('.skills-category');
+    skillCats[0].querySelector('.category-title').textContent = t.skills.languages;
+    skillCats[1].querySelector('.category-title').textContent = t.skills.frameworks;
+    skillCats[2].querySelector('.category-title').textContent = t.skills.ai;
+    skillCats[3].querySelector('.category-title').textContent = t.skills.databases;
+    skillCats[4].querySelector('.category-title').textContent = t.skills.integrations;
+    skillCats[5].querySelector('.category-title').textContent = t.skills.methods;
+    // Contato
+    document.querySelector('.contact .section-title').textContent = t.contactTitle;
+    document.querySelector('.contact-text p').textContent = t.contactText;
+    document.querySelector('.contact-cta .btn-primary').textContent = t.contactBtn;
+    // Footer
+    const footerSections = document.querySelectorAll('.footer-section h4');
+    footerSections[0].textContent = t.footer.services;
+    footerSections[1].textContent = t.footer.contact;
+}
+
+// Language switcher logic
+const langBtns = document.querySelectorAll('.lang-btn');
+langBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        langBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        setLanguage(this.dataset.lang);
+    });
+});
+// Set default language to English
+setLanguage('en');
+document.querySelector('.lang-btn[data-lang="en"]').classList.add('active');
+
+// Hamburger menu logic
+const hamburgerBtn = document.querySelector('.hamburger-btn');
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+
+document.addEventListener('click', function(e) {
+    if (hamburgerBtn.contains(e.target)) {
+        hamburgerMenu.classList.toggle('open');
+    } else if (!hamburgerMenu.contains(e.target)) {
+        hamburgerMenu.classList.remove('open');
+    }
+}); 
