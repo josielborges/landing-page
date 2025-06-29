@@ -61,14 +61,14 @@ function initScrollAnimations() {
     });
     
     // Parallax apenas no fundo do hero
-    document.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const heroBg = document.querySelector('.hero-bg');
-        if (heroBg) {
-            const speed = scrolled * 0.2;
-            heroBg.style.transform = `translateY(${speed}px)`;
-        }
-    });
+    // document.addEventListener('scroll', () => {
+    //     const scrolled = window.pageYOffset;
+    //     const heroBg = document.querySelector('.hero-bg');
+    //     if (heroBg) {
+    //         const speed = scrolled * 0.2;
+    //         heroBg.style.transform = `translateY(${speed}px)`;
+    //     }
+    // });
 }
 
 // Smooth scrolling for navigation links
@@ -182,15 +182,15 @@ function initTechGridAnimation() {
 }
 
 // Add animation class when elements come into view
-document.addEventListener('scroll', () => {
-    const elements = document.querySelectorAll('.animate-in');
-    elements.forEach(el => {
-        if (isElementInViewport(el)) {
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
-        }
-    });
-});
+// document.addEventListener('scroll', () => {
+//     const elements = document.querySelectorAll('.animate-in');
+//     elements.forEach(el => {
+//         if (isElementInViewport(el)) {
+//             el.style.opacity = '1';
+//             el.style.transform = 'translateY(0)';
+//         }
+//     });
+// });
 
 // Check if element is in viewport
 function isElementInViewport(el) {
@@ -353,12 +353,12 @@ progressBar.style.cssText = `
 `;
 document.body.appendChild(progressBar);
 
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset;
-    const docHeight = document.body.offsetHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    progressBar.style.width = scrollPercent + '%';
-});
+// window.addEventListener('scroll', () => {
+//     const scrollTop = window.pageYOffset;
+//     const docHeight = document.body.offsetHeight - window.innerHeight;
+//     const scrollPercent = (scrollTop / docHeight) * 100;
+//     progressBar.style.width = scrollPercent + '%';
+// });
 
 // Add copy functionality for code blocks
 document.querySelectorAll('.code-block').forEach(block => {
@@ -462,14 +462,13 @@ document.addEventListener('keydown', (e) => {
 let touchStartY = 0;
 let touchEndY = 0;
 
-document.addEventListener('touchstart', (e) => {
-    touchStartY = e.changedTouches[0].screenY;
-});
-
-document.addEventListener('touchend', (e) => {
-    touchEndY = e.changedTouches[0].screenY;
-    handleSwipe();
-});
+// document.addEventListener('touchstart', (e) => {
+//     touchStartY = e.changedTouches[0].screenY;
+// });
+// document.addEventListener('touchend', (e) => {
+//     touchEndY = e.changedTouches[0].screenY;
+//     handleSwipe();
+// });
 
 function handleSwipe() {
     const swipeThreshold = 50;
@@ -501,9 +500,9 @@ function throttle(func, limit) {
 }
 
 // Apply throttling to scroll events
-window.addEventListener('scroll', throttle(() => {
-    // Scroll-based animations
-}, 16)); // ~60fps
+// window.addEventListener('scroll', throttle(() => {
+//     // Scroll-based animations
+// }, 16)); // ~60fps
 
 console.log('🚀 Developer Platform Landing Page loaded successfully!');
 console.log('💻 Built with modern web technologies');

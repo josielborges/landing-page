@@ -55,8 +55,10 @@
     --radius-xl: 1.5rem;
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+    width: auto;
+    max-width: none;
+    overflow-x: hidden;
 }
 
 body {
@@ -64,7 +66,6 @@ body {
     background: linear-gradient(135deg, var(--primary-bg-dark) 0%, var(--primary-bg) 100%);
     color: var(--text-primary);
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
 /* Container */
