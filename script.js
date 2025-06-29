@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSkillTagsAnimation();
     initServiceCardsAnimation();
     initTechGridAnimation();
+    parallaxHeroBg();
 });
 
 // Typewriter effect for terminal
@@ -60,15 +61,37 @@ function initScrollAnimations() {
         observer.observe(el);
     });
     
-    // Parallax apenas no fundo do hero
-    // document.addEventListener('scroll', () => {
-    //     const scrolled = window.pageYOffset;
-    //     const heroBg = document.querySelector('.hero-bg');
-    //     if (heroBg) {
-    //         const speed = scrolled * 0.2;
-    //         heroBg.style.transform = `translateY(${speed}px)`;
-    //     }
-    // });
+    // Parallax otimizado apenas para desktop/tablet
+    function parallaxHeroBg() {
+        if (window.innerWidth < 768) return;
+        const heroBg = document.querySelector('.hero-bg');
+        if (!heroBg) return;
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+        function updateParallax() {
+            if (window.innerWidth < 768) {
+                heroBg.style.transform = '';
+                return;
+            }
+            const speed = window.scrollY * 0.2;
+            heroBg.style.transform = `translateY(${speed}px)`;
+            ticking = false;
+        }
+        function onScroll() {
+            lastScrollY = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+        window.addEventListener('scroll', onScroll);
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 768) {
+                heroBg.style.transform = '';
+            }
+        });
+    }
+    parallaxHeroBg();
 }
 
 // Smooth scrolling for navigation links

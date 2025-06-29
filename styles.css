@@ -284,6 +284,30 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: nowrap;
 }
 
+.hero-social {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.social-link {
+    color: var(--accent-green);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s, transform 0.2s;
+    padding: 0.15em;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    color: var(--primary-bg-dark);
+    background: var(--accent-green);
+    transform: translateY(-2px) scale(1.1);
+}
+
 .hero-photo {
     width: 120px;
     height: 120px;
@@ -895,19 +919,20 @@ h1, h2, h3, h4, h5, h6 {
         min-width: 0;
     }
     .hero-cta {
+        flex-direction: row;
         gap: var(--spacing-md);
         margin-top: var(--spacing-lg);
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         padding-bottom: 4px;
     }
-    .hero-cta .btn {
-        min-width: 120px;
-        max-width: 180px;
-        padding: 0.75rem 0.5rem;
-        font-size: 0.95rem;
-        flex: 0 0 auto;
-        white-space: nowrap;
+    .hero-social {
+        gap: 0.25rem;
+        margin-left: 0.25rem;
+    }
+    .social-link {
+        font-size: 1.2rem;
+        padding: 0.1em;
     }
     .tech-grid {
         grid-template-columns: repeat(2, 1fr);
