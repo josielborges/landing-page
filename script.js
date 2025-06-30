@@ -727,4 +727,38 @@ document.addEventListener('click', function(e) {
     } else if (!hamburgerMenu.contains(e.target)) {
         hamburgerMenu.classList.remove('open');
     }
+});
+
+// Contact form feedback (Formsubmit)
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(response => {
+          if (response.ok) {
+            form.style.display = 'none';
+            const msg = document.createElement('div');
+            msg.className = 'form-success-msg';
+            msg.innerHTML = '<strong>Mensagem enviada!</strong><br>Obrigado pelo contato. Responderei em breve.';
+            form.parentNode.appendChild(msg);
+          } else {
+            throw new Error('Erro ao enviar');
+          }
+        })
+        .catch(() => {
+          form.style.display = 'none';
+          const msg = document.createElement('div');
+          msg.className = 'form-error-msg';
+          msg.innerHTML = '<strong>Erro ao enviar.</strong><br>Tente novamente ou envie um email direto.';
+          form.parentNode.appendChild(msg);
+        });
+    });
+  }
 }); 

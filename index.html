@@ -79,7 +79,6 @@
                         <a href="#servicos" class="btn btn-secondary">Meus Serviços</a>
                     </div>
                     <div class="hero-social">
-                        <a href="mailto:chrys.jo@gmail.com" class="social-link" target="_blank" aria-label="Email"><i class="fa fa-envelope"></i></a>
                         <a href="https://www.linkedin.com/in/josieleliseuborges/" class="social-link" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/josielborges/" class="social-link" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="curriculum.pdf" class="social-link cv-link" target="_blank" aria-label="Download CV">
@@ -336,10 +335,6 @@ while (true) {
                     <p>Se você busca um desenvolvedor que une profundo conhecimento técnico, experiência em liderança e uma paixão genuína por criar soluções, vamos conversar. Estou pronto para ajudar a tirar seu projeto do papel.</p>
                     <div class="contact-info">
                         <div class="contact-item">
-                            <span class="contact-label">Email:</span>
-                            <a href="mailto:chrys.jo@gmail.com" class="contact-link">chrys.jo@gmail.com</a>
-                        </div>
-                        <div class="contact-item">
                             <span class="contact-label">LinkedIn:</span>
                             <a href="https://www.linkedin.com/in/josieleliseuborges/" class="contact-link" target="_blank">linkedin.com/in/josieleliseuborges</a>
                         </div>
@@ -349,8 +344,16 @@ while (true) {
                         </div>
                     </div>
                 </div>
-                <div class="contact-cta">
-                    <a href="mailto:chrys.jo@gmail.com" class="btn btn-primary btn-large">Entre em Contato</a>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" action="https://formsubmit.co/chrys.jo@gmail.com" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://sua-url.com/obrigado.html">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                        <input type="text" name="_honey" style="display:none">
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -373,7 +376,6 @@ while (true) {
                     </div>
                     <div class="footer-section">
                         <h4>Contato</h4>
-                        <a href="mailto:chrys.jo@gmail.com">Email</a>
                         <a href="https://www.linkedin.com/in/josieleliseuborges/" target="_blank">LinkedIn</a>
                         <a href="https://github.com/josielborges/" target="_blank">GitHub</a>
                     </div>
