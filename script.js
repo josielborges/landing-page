@@ -538,7 +538,7 @@ const translations = {
         hero: {
             title: "From Architecture to AI",
             subtitle: "Robust and Intelligent Software Solutions",
-            description: "Java and Python specialist with over 15 years of experience, turning complex challenges into efficient digital products. Currently seeking freelance projects to get hands-on and build amazing solutions.",
+            description: "Java and Python specialist with over 15 years of experience, transforming complex challenges into efficient digital products. Deep technical knowledge and a proven track record in delivering robust, scalable solutions for a variety of industries.",
             cta1: "Let's Talk",
             cta2: "My Services"
         },
@@ -601,7 +601,7 @@ const translations = {
         hero: {
             title: "Da Arquitetura à IA",
             subtitle: "Soluções de Software Robustas e Inteligentes",
-            description: "Especialista em Java e Python com mais de 15 anos de experiência, transformando desafios complexos em produtos digitais eficientes. Atualmente buscando projetos freelance para colocar a mão na massa e construir soluções incríveis.",
+            description: "Especialista em Java e Python com mais de 15 anos de experiência, transformando desafios complexos em produtos digitais eficientes. Conhecimento técnico profundo e histórico comprovado na entrega de soluções robustas e escaláveis para diversos setores.",
             cta1: "Vamos Conversar",
             cta2: "Meus Serviços"
         },
