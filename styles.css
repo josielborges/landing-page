@@ -297,7 +297,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.4rem;
     font-weight: 700;
     margin-bottom: var(--spacing-lg);
     line-height: 1.1;
@@ -1454,4 +1454,44 @@ html {
     padding: 0.8rem 1rem;
     font-size: 0.95rem;
   }
+}
+
+.lang-switcher-fixed {
+    position: fixed;
+    top: 18px;
+    right: 24px;
+    z-index: 3100;
+    background: rgba(26,32,44,0.92);
+    padding: 2px 8px;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s;
+}
+.lang-switcher-fixed .lang-btn {
+    font-size: 1.45rem;
+    font-family: var(--font-mono);
+    color: var(--accent-green);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.1em 0.4em;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+.lang-switcher-fixed .lang-btn:hover,
+.lang-switcher-fixed .lang-btn:focus {
+    background: rgba(0,255,136,0.10);
+    color: var(--primary-bg-dark);
+    outline: none;
+}
+@media (max-width: 600px) {
+    .lang-switcher-fixed {
+        top: 10px;
+        right: 10px;
+        padding: 1px 4px;
+    }
+    .lang-switcher-fixed .lang-btn {
+        font-size: 1.15rem;
+        padding: 0.1em 0.2em;
+    }
 }

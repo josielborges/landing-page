@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initSkillTagsAnimation();
     initServiceCardsAnimation();
     initTechGridAnimation();
-    parallaxHeroBg();
 });
 
 // Typewriter effect for terminal
@@ -661,71 +660,140 @@ const translations = {
     }
 };
 
+// Traduções para página de obrigado
+const thankTranslations = {
+    en: {
+        title: 'Thank You for Reaching Out - Josiel Borges',
+        desc: 'Thank you for getting in touch. I will reply as soon as possible!',
+        sent: 'Message Sent!',
+        message: 'Thank you for reaching out. I have received your message and will reply as soon as possible.',
+        back: 'Back to Home',
+        send: 'Send Another Message',
+        while: 'Meanwhile, check out:',
+        story: 'My Story',
+        services: 'My Services',
+        skills: 'My Skills',
+        cv: 'My Resume'
+    },
+    pt: {
+        title: 'Obrigado pelo Contato - Josiel Borges',
+        desc: 'Obrigado por entrar em contato. Responderei em breve!',
+        sent: 'Mensagem Enviada!',
+        message: 'Obrigado por entrar em contato. Recebi sua mensagem e responderei o mais breve possível.',
+        back: 'Voltar ao Início',
+        send: 'Enviar Outra Mensagem',
+        while: 'Enquanto isso, que tal dar uma olhada em:',
+        story: 'Minha História',
+        services: 'Meus Serviços',
+        skills: 'Minhas Skills',
+        cv: 'Meu Currículo'
+    }
+};
+
 function setLanguage(lang) {
     const t = translations[lang];
     // Navbar
     const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach((el, i) => el.textContent = t.nav[i]);
+    navLinks.forEach((el, i) => { if (t.nav[i]) el.textContent = t.nav[i]; });
     // Hero
-    document.querySelector('.hero-title').innerHTML = `<span class="code-bracket">{</span> ${t.hero.title} <span class="code-bracket">}</span>`;
-    document.querySelector('.hero-subtitle').textContent = t.hero.subtitle;
-    document.querySelector('.hero-description').textContent = t.hero.description;
-    document.querySelector('.hero-cta .btn-primary').textContent = t.hero.cta1;
-    document.querySelector('.hero-cta .btn-secondary').textContent = t.hero.cta2;
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) heroTitle.innerHTML = `<span class="code-bracket">{</span> ${t.hero.title} <span class="code-bracket">}</span>`;
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    if (heroSubtitle) heroSubtitle.textContent = t.hero.subtitle;
+    const heroDesc = document.querySelector('.hero-description');
+    if (heroDesc) heroDesc.textContent = t.hero.description;
+    const heroCta1 = document.querySelector('.hero-cta .btn-primary');
+    if (heroCta1) heroCta1.textContent = t.hero.cta1;
+    const heroCta2 = document.querySelector('.hero-cta .btn-secondary');
+    if (heroCta2) heroCta2.textContent = t.hero.cta2;
     // Tecnologias
-    document.querySelector('.technologies .section-title').textContent = t.techTitle;
+    const techTitle = document.querySelector('.technologies .section-title');
+    if (techTitle) techTitle.textContent = t.techTitle;
     // About
-    document.querySelector('.about .section-title').textContent = t.about.title;
+    const aboutTitle = document.querySelector('.about .section-title');
+    if (aboutTitle) aboutTitle.textContent = t.about.title;
     const aboutText = document.querySelector('.about-text');
-    aboutText.innerHTML = t.about.text.map(p => `<p>${p}</p>`).join('');
+    if (aboutText) aboutText.innerHTML = t.about.text.map(p => `<p>${p}</p>`).join('');
     // Serviços
-    document.querySelector('.services .section-title').textContent = t.servicesTitle;
+    const servicesTitle = document.querySelector('.services .section-title');
+    if (servicesTitle) servicesTitle.textContent = t.servicesTitle;
     const serviceCards = document.querySelectorAll('.service-card');
     t.services.forEach((serv, i) => {
-        serviceCards[i].querySelector('.service-title').textContent = serv.title;
-        serviceCards[i].querySelector('.service-description').textContent = serv.desc;
+        if (serviceCards[i]) {
+            const st = serviceCards[i].querySelector('.service-title');
+            const sd = serviceCards[i].querySelector('.service-description');
+            if (st) st.textContent = serv.title;
+            if (sd) sd.textContent = serv.desc;
+        }
     });
     // Skills
-    document.querySelector('.skills .section-title').textContent = t.skillsTitle;
+    const skillsTitle = document.querySelector('.skills .section-title');
+    if (skillsTitle) skillsTitle.textContent = t.skillsTitle;
     const skillCats = document.querySelectorAll('.skills-category');
-    skillCats[0].querySelector('.category-title').textContent = t.skills.languages;
-    skillCats[1].querySelector('.category-title').textContent = t.skills.frameworks;
-    skillCats[2].querySelector('.category-title').textContent = t.skills.ai;
-    skillCats[3].querySelector('.category-title').textContent = t.skills.databases;
-    skillCats[4].querySelector('.category-title').textContent = t.skills.integrations;
-    skillCats[5].querySelector('.category-title').textContent = t.skills.methods;
+    if (skillCats[0]) skillCats[0].querySelector('.category-title').textContent = t.skills.languages;
+    if (skillCats[1]) skillCats[1].querySelector('.category-title').textContent = t.skills.frameworks;
+    if (skillCats[2]) skillCats[2].querySelector('.category-title').textContent = t.skills.ai;
+    if (skillCats[3]) skillCats[3].querySelector('.category-title').textContent = t.skills.databases;
+    if (skillCats[4]) skillCats[4].querySelector('.category-title').textContent = t.skills.integrations;
+    if (skillCats[5]) skillCats[5].querySelector('.category-title').textContent = t.skills.methods;
     // Contato
-    document.querySelector('.contact .section-title').textContent = t.contactTitle;
-    document.querySelector('.contact-text p').textContent = t.contactText;
-    document.querySelector('.contact-cta .btn-primary').textContent = t.contactBtn;
+    const contactTitle = document.querySelector('.contact .section-title');
+    if (contactTitle) contactTitle.textContent = t.contactTitle;
+    const contactText = document.querySelector('.contact-text p');
+    if (contactText) contactText.textContent = t.contactText;
+    const contactBtn = document.querySelector('.contact-cta .btn-primary');
+    if (contactBtn) contactBtn.textContent = t.contactBtn;
     // Footer
     const footerSections = document.querySelectorAll('.footer-section h4');
-    footerSections[0].textContent = t.footer.services;
-    footerSections[1].textContent = t.footer.contact;
+    if (footerSections[0]) footerSections[0].textContent = t.footer.services;
+    if (footerSections[1]) footerSections[1].textContent = t.footer.contact;
 }
 
-// Language switcher logic
-const langBtns = document.querySelectorAll('.lang-btn');
-langBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-        langBtns.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        setLanguage(this.dataset.lang);
+// Controle global de idioma
+let currentLang = document.querySelector('.thank-you-title') ? 'en' : 'en';
+const langToggleBtn = document.getElementById('lang-toggle-btn');
+
+function updateLangBtn() {
+    if (!langToggleBtn) return;
+    if (currentLang === 'en') {
+        langToggleBtn.textContent = '🇧🇷';
+        langToggleBtn.setAttribute('aria-label', 'Mudar para Português');
+    } else {
+        langToggleBtn.textContent = '🇺🇸';
+        langToggleBtn.setAttribute('aria-label', 'Switch to English');
+    }
+}
+
+if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', function() {
+        currentLang = currentLang === 'en' ? 'pt' : 'en';
+        if (document.querySelector('.thank-you-title')) {
+            setThankLanguage(currentLang);
+        } else {
+            setLanguage(currentLang);
+        }
+        updateLangBtn();
     });
-});
-// Set default language to English
-setLanguage('en');
-document.querySelector('.lang-btn[data-lang="en"]').classList.add('active');
+    // Inicializa botão e idioma
+    if (document.querySelector('.thank-you-title')) {
+        setThankLanguage(currentLang);
+    } else {
+        setLanguage(currentLang);
+    }
+    updateLangBtn();
+}
 
 // Hamburger menu logic
 const hamburgerBtn = document.querySelector('.hamburger-btn');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 
 document.addEventListener('click', function(e) {
-    if (hamburgerBtn.contains(e.target)) {
-        hamburgerMenu.classList.toggle('open');
-    } else if (!hamburgerMenu.contains(e.target)) {
-        hamburgerMenu.classList.remove('open');
+    if (hamburgerBtn && hamburgerMenu) {
+        if (hamburgerBtn.contains(e.target)) {
+            hamburgerMenu.classList.toggle('open');
+        } else if (!hamburgerMenu.contains(e.target)) {
+            hamburgerMenu.classList.remove('open');
+        }
     }
 });
 
@@ -761,4 +829,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
   }
-}); 
+});
+
+function setThankLanguage(lang) {
+    const t = thankTranslations[lang];
+    document.querySelector('.thank-title').textContent = t.title;
+    document.querySelector('.thank-desc').setAttribute('content', t.desc);
+    document.querySelector('.thank-you-title').textContent = t.sent;
+    document.querySelector('.thank-you-message').textContent = t.message;
+    document.querySelector('.thank-back').textContent = t.back;
+    document.querySelector('.thank-send').textContent = t.send;
+    document.querySelector('.thank-while').textContent = t.while;
+    document.querySelector('.thank-story span').textContent = t.story;
+    document.querySelector('.thank-services span').textContent = t.services;
+    document.querySelector('.thank-skills span').textContent = t.skills;
+    document.querySelector('.thank-cv span').textContent = t.cv;
+} 

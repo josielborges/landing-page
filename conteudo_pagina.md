@@ -2,7 +2,7 @@
 
 ## Seção 1: Herói
 
-- **Título (H1):** Da Arquitetura à IA: Soluções de Software Robustas e Inteligentes
+- **Título (H1):** Construindo Sistemas Robustos com Java, Python & IA: Soluções de Software Robustas e Inteligentes
 - **Subtítulo:** Especialista em Java e Python com mais de 15 anos de experiência, transformando desafios complexos em produtos digitais eficientes. Atualmente buscando projetos freelance para colocar a mão na massa e construir soluções incríveis.
 - **Botões de Ação (CTAs):**
   - "Vamos Conversar"

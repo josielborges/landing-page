@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obrigado pelo Contato - Josiel Borges</title>
-    <meta name="description" content="Obrigado por entrar em contato. Responderei em breve!">
+    <title class="thank-title">Obrigado pelo Contato - Josiel Borges</title>
+    <meta name="description" content="Obrigado por entrar em contato. Responderei em breve!" class="thank-desc">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
@@ -13,18 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Hamburger Menu -->
-    <div class="hamburger-menu">
-        <button class="hamburger-btn" aria-label="Open menu">
-            <span class="hamburger-icon"></span>
-        </button>
-        <div class="hamburger-dropdown">
-            <div class="lang-switcher">
-                <button class="lang-btn" data-lang="en" aria-label="English">🇺🇸</button>
-                <span class="lang-divider">|</span>
-                <button class="lang-btn" data-lang="pt" aria-label="Português do Brasil">🇧🇷</button>
-            </div>
-        </div>
+    <!-- Language Switcher (fora do hamburger) -->
+    <div class="lang-switcher-fixed">
+        <button class="lang-btn" id="lang-toggle-btn" aria-label="Switch language">🇧🇷</button>
     </div>
 
     <!-- Navigation -->
@@ -57,25 +48,25 @@
                         Obrigado por entrar em contato. Recebi sua mensagem e responderei o mais breve possível.
                     </p>
                     <div class="thank-you-actions">
-                        <a href="index.html" class="btn btn-primary">Voltar ao Início</a>
-                        <a href="index.html#contact" class="btn btn-secondary">Enviar Outra Mensagem</a>
+                        <a href="index.html" class="btn btn-primary thank-back">Voltar ao Início</a>
+                        <a href="index.html#contact" class="btn btn-secondary thank-send">Enviar Outra Mensagem</a>
                     </div>
                     <div class="thank-you-links">
-                        <p>Enquanto isso, que tal dar uma olhada em:</p>
+                        <p class="thank-while">Enquanto isso, que tal dar uma olhada em:</p>
                         <div class="quick-links">
-                            <a href="index.html#about" class="quick-link">
+                            <a href="index.html#about" class="quick-link thank-story">
                                 <i class="fas fa-user"></i>
                                 <span>Minha História</span>
                             </a>
-                            <a href="index.html#services" class="quick-link">
+                            <a href="index.html#services" class="quick-link thank-services">
                                 <i class="fas fa-cogs"></i>
                                 <span>Meus Serviços</span>
                             </a>
-                            <a href="index.html#skills" class="quick-link">
+                            <a href="index.html#skills" class="quick-link thank-skills">
                                 <i class="fas fa-code"></i>
                                 <span>Minhas Skills</span>
                             </a>
-                            <a href="curriculum.pdf" class="quick-link" target="_blank">
+                            <a href="curriculum.pdf" class="quick-link thank-cv" target="_blank">
                                 <i class="fas fa-file-alt"></i>
                                 <span>Meu Currículo</span>
                             </a>
@@ -92,7 +83,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <span class="logo-text">&lt;Josiel/&gt;</span>
-                    <p class="footer-tagline">Da Arquitetura à IA</p>
+                    <p class="footer-tagline">Construindo Sistemas Robustos com Java, Python & IA</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-section">
