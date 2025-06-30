@@ -536,7 +536,7 @@ const translations = {
     en: {
         nav: ["About", "Services", "Technologies", "Contact"],
         hero: {
-            title: "From Architecture to AI",
+            title: "Building Robust Systems with Java, Python & AI",
             subtitle: "Robust and Intelligent Software Solutions",
             description: "Java and Python specialist with over 15 years of experience, transforming complex challenges into efficient digital products. Deep technical knowledge and a proven track record in delivering robust, scalable solutions for a variety of industries.",
             cta1: "Let's Talk",
@@ -549,7 +549,7 @@ const translations = {
                 "My journey in technology began in 2009. With a solid foundation in Computer Science and specializations in Agile Leadership and Artificial Intelligence, I've always been driven by curiosity and a desire to learn.",
                 "I started with PHP, but it was in the Java ecosystem that I built my career and became a senior specialist. In 2016, I took on the challenge of technical leadership, guiding teams to deliver high-impact projects.",
                 "Today, as a Tech Lead, my greatest pleasure is still the same as in the beginning: programming. I love being on the front lines, developing products, solving problems, and exploring new frontiers with Generative AI and Python.",
-                "This passion for building motivates me to seek new challenges as a freelancer."
+                "Motivated by challenges and innovation, I am always open to new opportunities to apply my expertise and deliver excellence in technology."
             ]
         },
         servicesTitle: "From Backend to Artificial Intelligence",
@@ -599,7 +599,7 @@ const translations = {
     pt: {
         nav: ["Sobre", "Serviços", "Tecnologias", "Contato"],
         hero: {
-            title: "Da Arquitetura à IA",
+            title: "Construindo Sistemas Robustos com Java, Python & IA",
             subtitle: "Soluções de Software Robustas e Inteligentes",
             description: "Especialista em Java e Python com mais de 15 anos de experiência, transformando desafios complexos em produtos digitais eficientes. Conhecimento técnico profundo e histórico comprovado na entrega de soluções robustas e escaláveis para diversos setores.",
             cta1: "Vamos Conversar",
@@ -612,7 +612,7 @@ const translations = {
                 "Minha jornada no mundo da tecnologia começou em 2009. Com uma base sólida em Ciência da Computação e especializações em Liderança Ágil e Inteligência Artificial, sempre fui movido pela curiosidade e pelo desejo de aprender.",
                 "Comecei com PHP, mas foi no ecossistema Java que construí minha carreira e me tornei um especialista sênior. Em 2016, assumi o desafio da liderança técnica, guiando equipes para entregar projetos de alto impacto.",
                 "Hoje, como Tech Lead, meu maior prazer ainda é o mesmo do início: programar. Adoro estar na linha de frente, desenvolvendo produtos, resolvendo problemas e explorando novas fronteiras com IA Generativa e Python.",
-                "É essa paixão por construir que me motiva a buscar novos desafios como freelancer."
+                "Sou motivado por desafios e inovação, sempre aberto a oportunidades para aplicar meu conhecimento e entregar excelência em tecnologia."
             ]
         },
         servicesTitle: "Do Backend à Inteligência Artificial",
