@@ -919,16 +919,34 @@ h1, h2, h3, h4, h5, h6 {
         min-width: 0;
     }
     .hero-cta {
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
         gap: var(--spacing-md);
         margin-top: var(--spacing-lg);
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 4px;
+        overflow-x: visible;
+        padding-bottom: 0;
+    }
+    .hero-cta-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing-md);
+        width: 100%;
+    }
+    .hero-cta-buttons .btn {
+        min-width: 120px;
+        max-width: 180px;
+        padding: 0.75rem 0.5rem;
+        font-size: 0.95rem;
+        flex: 0 0 auto;
+        white-space: nowrap;
     }
     .hero-social {
-        gap: 0.25rem;
-        margin-left: 0.25rem;
+        margin-left: 0;
+        margin-top: 0.5rem;
+        justify-content: center;
+        width: 100%;
     }
     .social-link {
         font-size: 1.2rem;
@@ -946,6 +964,13 @@ h1, h2, h3, h4, h5, h6 {
     }
     .lang-switcher {
         font-size: 0.95rem;
+    }
+    .cv-link {
+        font-size: 1.2rem;
+        padding: 0.1em;
+    }
+    .cv-text {
+        display: none;
     }
 }
 
@@ -1096,4 +1121,47 @@ html {
         min-width: 110px;
         padding: 0.75rem 1rem;
     }
+}
+
+.cv-link {
+    color: var(--accent-green);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+.cv-link:hover {
+    color: var(--primary-bg-dark);
+    background: var(--accent-green);
+}
+.cv-text {
+    font-size: 1rem;
+    display: inline;
+}
+.cv-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    background: var(--primary-bg-dark);
+    color: var(--accent-green);
+    text-align: center;
+    border-radius: 4px;
+    padding: 4px 10px;
+    position: absolute;
+    z-index: 10;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.95rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    transition: opacity 0.2s, visibility 0.2s;
+    pointer-events: none;
+}
+.cv-link:hover .cv-tooltip,
+.cv-link:focus .cv-tooltip,
+.cv-link:active .cv-tooltip {
+    visibility: visible;
+    opacity: 1;
 } 
