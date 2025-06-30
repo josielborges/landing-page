@@ -1,144 +1,113 @@
-# 🚀 Landing Page - Josiel (Desenvolvedor Backend & IA)
+# 🚀 Landing Page - Josiel (Backend Developer & AI)
 
-Uma landing page moderna e profissional para desenvolvedor backend, seguindo o design system de plataforma de desenvolvedor com estética de terminal e código.
+A modern, professional landing page for a backend developer, following a developer platform design system with a dark, code-inspired aesthetic.
 
-## ✨ Características
+## ✨ Features
 
-- **Design System Moderno**: Seguindo o Developer Platform Design System com tema escuro e estética de terminal
-- **Responsivo**: Totalmente responsivo para desktop, tablet e mobile
-- **Animações Suaves**: Efeitos de scroll, hover e transições fluidas
-- **Terminal Interativo**: Janela de terminal animada com efeito typewriter
-- **Performance Otimizada**: Carregamento rápido e animações otimizadas
-- **Acessibilidade**: Suporte a navegação por teclado e screen readers
+- **Modern Design System**: Based on the Developer Platform Design System with a dark theme and terminal/code look
+- **Responsive**: Fully responsive for desktop, tablet, and mobile
+- **Smooth Animations**: Scroll, hover, and transition effects
+- **Interactive Terminal**: Animated terminal window with typewriter effect
+- **Optimized Performance**: Fast loading and optimized animations
+- **Accessibility**: Keyboard navigation and screen reader support
+- **Internationalization (i18n)**: Language switcher (🇧🇷/🇺🇸) with persistent language selection, including on the thank-you page
 
 ## 🎨 Design System
 
-### Paleta de Cores
-- **Primária**: Tons de cinza escuro (#2d3748, #1a202c)
-- **Acento**: Verde terminal (#00ff88, #38a169)
-- **Texto**: Branco e tons de cinza claro
-- **Código**: Fundo escuro com syntax highlighting
+### Color Palette
+- **Primary**: Dark gray tones (#2d3748, #1a202c)
+- **Accent**: Terminal green (#00ff88, #38a169)
+- **Text**: White and light gray
+- **Code**: Dark background with syntax highlighting
 
-### Tipografia
-- **Primária**: Inter (sans-serif)
-- **Monospace**: JetBrains Mono (para código)
-- **Display**: Inter (para títulos)
+### Typography
+- **Primary**: Inter (sans-serif)
+- **Monospace**: JetBrains Mono (for code)
+- **Display**: Inter (for headings)
 
-### Componentes
-- Terminal windows com controles macOS-style
-- Code blocks com syntax highlighting
-- Cards com hover effects
-- Botões com gradientes e glow effects
+### Components
+- Terminal windows with macOS-style controls
+- Code blocks with syntax highlighting
+- Cards with hover effects
+- Buttons with gradients and glow effects
+- Fixed language switcher (top right)
+- Hamburger menu for navigation (mobile)
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```
 landing-page/
-├── index.html          # Página principal
-├── styles.css          # Estilos CSS
-├── script.js           # JavaScript interativo
+├── index.html          # Main landing page
+├── thank-you.html      # Thank you page (after contact form)
+├── styles.css          # CSS styles
+├── script.js           # Interactive JavaScript
 ├── assets/
-│   └── images/
-│       └── josiel.jpg  # Foto do perfil
-├── conteudo_pagina.md  # Conteúdo da página
+│   ├── images/
+│   │   └── josiel.jpg  # Profile photo
+│   ├── json/
+│   │   └── dev_platform-design-system.json  # Design system JSON
+│   └── markdown/
+│       └── page-content.md  # Page content source
+├── conteudo_pagina.md  # Page content (PT-BR)
 ├── dev_platform_design_system.json  # Design system
-└── README.md           # Documentação
+└── README.md           # Documentation
 ```
 
-## 🚀 Como Usar
+## 🛠️ Creation Process
 
-1. **Clone ou baixe** os arquivos do projeto
-2. **Abra** o arquivo `index.html` em um navegador moderno
-3. **Personalize** o conteúdo editando o HTML e CSS conforme necessário
+This landing page was created using a modern AI-assisted workflow:
 
-### Personalização
+### 1. Design System Generation
+- **Input**: Screenshot of a developer platform design system (`assets/images/system-design-font.jpg`)
+- **Tool**: Claude AI
+- **Prompt**: "Create a JSON profile design system that extracts visual data from these screenshots so that i can use the JSON output in Cursor to give it context on how to replicate such design systems in a consistent style. Avoid including the contents of the specific images. The output should include the design style, the structure and anything that'll help an AI replicate such designs"
+- **Output**: `assets/json/dev_platform-design-system.json`
 
-#### Conteúdo
-- Edite o arquivo `index.html` para alterar textos e informações
-- Atualize links de contato (email, LinkedIn, GitHub)
-- Modifique a foto de perfil em `assets/images/`
+### 2. Content Preparation
+- **Source**: `assets/markdown/page-content.md` - Contains all the content and structure information for the landing page
+- **Format**: Markdown with organized sections and clear content hierarchy
 
-#### Estilos
-- As variáveis CSS estão definidas no início do arquivo `styles.css`
-- Modifique as cores, fontes e espaçamentos conforme necessário
-- O design system está documentado em `dev_platform_design_system.json`
+### 3. Implementation
+- **IDE**: Cursor
+- **Context**: The design system JSON and content markdown were provided to Cursor as context
+- **Result**: Complete landing page implementation following the extracted design system consistently
 
-#### Funcionalidades
-- O JavaScript está em `script.js` com comentários explicativos
-- Animações e interações podem ser personalizadas
-- Efeitos de scroll e hover são configuráveis
+### 4. Enhancement
+- **Internationalization**: Added language switcher with persistent language selection
+- **Form Integration**: Contact form with Formsubmit integration
+- **Thank You Page**: Separate page with language persistence
+- **Responsive Design**: Mobile-first approach with comprehensive breakpoints
 
-## 🛠️ Tecnologias Utilizadas
+This workflow demonstrates how AI tools can be used together to create professional, consistent designs by:
+1. Extracting design patterns from visual references
+2. Structuring content in a clear, reusable format
+3. Using AI-assisted development to implement the design system consistently
 
-- **HTML5**: Estrutura semântica
-- **CSS3**: Estilos modernos com CSS Grid, Flexbox e variáveis CSS
-- **JavaScript ES6+**: Interatividade e animações
-- **Fonts**: Google Fonts (Inter, JetBrains Mono)
+## 🚀 How to Use
 
-## 📱 Responsividade
+1. **Clone or download** the project files
+2. **Open** the `index.html` file in a modern browser
+3. **Customize** the content by editing the HTML, CSS, and JS as needed
 
-A página é totalmente responsiva com breakpoints:
-- **Mobile**: < 480px
-- **Tablet**: 480px - 1024px
-- **Desktop**: > 1024px
+### Internationalization (i18n)
+- The language switcher (🇧🇷/🇺🇸) is always visible at the top right.
+- All main content is available in both English and Portuguese.
+- When you send a message via the contact form, the selected language is preserved on the thank-you page.
 
-## 🎯 Seções da Página
+### Customization
 
-1. **Hero**: Título principal com terminal interativo
-2. **Tecnologias**: Grid de tecnologias dominadas
-3. **Sobre**: Jornada profissional com código de exemplo
-4. **Serviços**: Cards com serviços oferecidos
-5. **Competências**: Tags organizadas por categoria
-6. **Contato**: Informações de contato e CTA
+#### Content
+- Edit `page-content.md` for the main content (PT-BR)
+- Edit `index.html` and `thank-you.html` for structure and section order
 
-## ⚡ Performance
+#### Design
+- Adjust colors, fonts, and spacing in `styles.css`
+- Update the design system in `dev_platform_design_system.json` if needed
 
-- **Lazy Loading**: Animações carregadas conforme necessário
-- **Throttling**: Eventos de scroll otimizados
-- **CSS Variables**: Reutilização eficiente de estilos
-- **Minimal JavaScript**: Código otimizado e comentado
-
-## 🔧 Funcionalidades JavaScript
-
-- **Typewriter Effect**: Animação de digitação no terminal
-- **Scroll Animations**: Elementos aparecem conforme scroll
-- **Smooth Scrolling**: Navegação suave entre seções
-- **Navbar Effects**: Mudança de estilo conforme scroll
-- **Copy Code**: Botão para copiar código dos blocos
-- **Progress Bar**: Indicador de progresso do scroll
-- **Particle Effects**: Partículas flutuantes no hero
-- **Touch Support**: Suporte a gestos em mobile
-
-## 🎨 Animações
-
-- **Fade In**: Elementos aparecem suavemente
-- **Slide Up**: Movimento de baixo para cima
-- **Hover Effects**: Interações ao passar o mouse
-- **Glow Effects**: Brilho nos botões e elementos
-- **Shine Effects**: Efeito de brilho nos cards
-- **Cursor Blink**: Cursor piscante no terminal
-
-## 📧 Contato
-
-Para personalizar ou modificar a landing page:
-
-1. **Email**: contato@josiel.dev
-2. **LinkedIn**: linkedin.com/in/josiel
-3. **GitHub**: github.com/josiel
-
-## 📄 Licença
-
-Este projeto é de uso livre para fins pessoais e comerciais.
-
-## 🔄 Atualizações
-
-### v1.0.0
-- ✅ Landing page inicial
-- ✅ Design system implementado
-- ✅ Responsividade completa
-- ✅ Animações e interatividade
-- ✅ Documentação completa
+#### Adding More Languages
+- Add translations in `script.js` under the `translations` and `thankTranslations` objects
+- The language switcher will automatically support new languages if added
 
 ---
 
-**Desenvolvido com ❤️ seguindo as melhores práticas de desenvolvimento web moderno.** 
+**Made with ❤️ by Josiel Borges** 
