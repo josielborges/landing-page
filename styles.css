@@ -1454,4 +1454,38 @@ html {
     padding: 0.8rem 1rem;
     font-size: 0.95rem;
   }
+}
+
+/* Forçar estilização dos links do menu e botões na página obrigado */
+.header .nav-list a,
+.header .nav-list .btn,
+.btn,
+.btn-outline,
+.btn-primary {
+  color: #e6e6e6 !important;
+  background: none;
+  border: none;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.header .nav-list .btn-outline,
+.btn-outline {
+  border: 1.5px solid #00ff99 !important;
+  color: #00ff99 !important;
+  background: transparent !important;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+}
+
+.header .nav-list .btn-primary,
+.btn-primary {
+  background: #00ff99 !important;
+  color: #181c20 !important;
+  border: none !important;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  box-shadow: 0 2px 8px 0 rgba(0,255,153,0.08);
 } 
