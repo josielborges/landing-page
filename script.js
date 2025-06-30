@@ -555,11 +555,11 @@ const translations = {
         services: [
             {
                 title: "High-Performance Backend Development",
-                desc: "Building robust and scalable systems with Java (Spring, Quarkus) and Python (FastAPI)."
+                desc: "Creation of robust and scalable systems with Java (Spring, Quarkus) and Python (FastAPI)."
             },
             {
                 title: "Generative AI Solutions",
-                desc: "Developing intelligent applications using OpenAI/Gemini libraries and frameworks like LangChain."
+                desc: "Development of intelligent applications using OpenAI/Gemini libraries and frameworks like LangChain."
             },
             {
                 title: "System Integration",
@@ -567,15 +567,15 @@ const translations = {
             },
             {
                 title: "Intelligent Chatbots",
-                desc: "Building chatbots for automating support and processes, offering smooth and efficient user experiences."
+                desc: "Building chatbots for customer service automation and processes, offering smooth and efficient user experiences."
             },
             {
                 title: "Software Architecture",
-                desc: "Designing resilient and well-documented application architectures, ensuring longevity and maintainability."
+                desc: "Design of resilient and well-documented application architectures, ensuring the longevity and maintainability of your project."
             },
             {
                 title: "Databases",
-                desc: "Modeling and optimizing relational databases to ensure performance and data integrity."
+                desc: "Modeling and optimization of relational databases to ensure performance and data integrity."
             }
         ],
         skillsTitle: "My Toolbox",
@@ -587,12 +587,13 @@ const translations = {
             integrations: "Integrations & APIs",
             methods: "Methodologies"
         },
-        contactTitle: "Got a challenge in mind?",
-        contactText: "If you are looking for a developer who combines deep technical knowledge, leadership experience, and a genuine passion for creating solutions, let's talk. I'm ready to help bring your project to life.",
-        contactBtn: "Contact Me",
+        contactTitle: "Have a challenge in mind?",
+        contactText: "If you're looking for a developer who combines deep technical knowledge, leadership experience, and a genuine passion for creating solutions, let's talk. I'm ready to help bring your project to life.",
+        contactBtn: "Get in Touch",
         footer: {
             services: "Services",
-            contact: "Contact"
+            contact: "Contact",
+            tagline: "Building Robust Systems with Java, Python & AI"
         }
     },
     pt: {
@@ -655,7 +656,8 @@ const translations = {
         contactBtn: "Entre em Contato",
         footer: {
             services: "Serviços",
-            contact: "Contato"
+            contact: "Contato",
+            tagline: "Construindo Sistemas Robustos com Java, Python & IA"
         }
     }
 };
@@ -747,6 +749,10 @@ function setLanguage(lang) {
     const footerSections = document.querySelectorAll('.footer-section h4');
     if (footerSections[0]) footerSections[0].textContent = t.footer.services;
     if (footerSections[1]) footerSections[1].textContent = t.footer.contact;
+    
+    // Update footer tagline
+    const footerTagline = document.getElementById('footer-tagline');
+    if (footerTagline) footerTagline.textContent = t.footer.tagline;
 }
 
 function getLangFromUrl() {
