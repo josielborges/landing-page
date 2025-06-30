@@ -13,31 +13,35 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <a href="index.html">Josiel Borges</a>
-                </div>
-                <nav class="nav">
-                    <ul class="nav-list">
-                        <li><a href="index.html#about">Sobre</a></li>
-                        <li><a href="index.html#services">Serviços</a></li>
-                        <li><a href="index.html#skills">Competências</a></li>
-                        <li><a href="index.html#contact">Contato</a></li>
-                        <li><a href="curriculum.pdf" class="btn btn-outline" target="_blank">Resume</a></li>
-                    </ul>
-                </nav>
-                <button class="mobile-menu-toggle" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu">
+        <button class="hamburger-btn" aria-label="Open menu">
+            <span class="hamburger-icon"></span>
+        </button>
+        <div class="hamburger-dropdown">
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="en" aria-label="English">🇺🇸</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang="pt" aria-label="Português do Brasil">🇧🇷</button>
             </div>
         </div>
-    </header>
-    <div class="nav-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-logo">
+                <span class="logo-text">&lt;Josiel/&gt;</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html#sobre" class="nav-link">Sobre</a>
+                <a href="index.html#servicos" class="nav-link">Serviços</a>
+                <a href="index.html#tecnologias" class="nav-link">Tecnologias</a>
+                <a href="index.html#contato" class="nav-link">Contato</a>
+                <a href="curriculum.pdf" class="btn btn-resume-desktop" target="_blank" aria-label="Download Resume">Resume</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- Main Content -->
     <main class="main">
@@ -86,25 +90,26 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Josiel Borges</h4>
-                    <p>Desenvolvedor Backend apaixonado por criar soluções robustas e escaláveis.</p>
+                <div class="footer-logo">
+                    <span class="logo-text">&lt;Josiel/&gt;</span>
+                    <p class="footer-tagline">Da Arquitetura à IA</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Links</h4>
-                    <a href="index.html#about">Sobre</a>
-                    <a href="index.html#services">Serviços</a>
-                    <a href="index.html#skills">Competências</a>
-                    <a href="index.html#contact">Contato</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Contato</h4>
-                    <a href="https://www.linkedin.com/in/josieleliseuborges/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/josielborges/" target="_blank">GitHub</a>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Serviços</h4>
+                        <a href="index.html#servicos">Backend Development</a>
+                        <a href="index.html#servicos">AI Solutions</a>
+                        <a href="index.html#servicos">System Integration</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contato</h4>
+                        <a href="https://www.linkedin.com/in/josieleliseuborges/" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/josielborges/" target="_blank">GitHub</a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Josiel Borges. Todos os direitos reservados.</p>
+                <p>&copy; 2024 Josiel. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
