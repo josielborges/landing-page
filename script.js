@@ -749,8 +749,18 @@ function setLanguage(lang) {
     if (footerSections[1]) footerSections[1].textContent = t.footer.contact;
 }
 
+function getLangFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('lang');
+}
+
 // Controle global de idioma
-let currentLang = document.querySelector('.thank-you-title') ? 'en' : 'en';
+let currentLang;
+if (document.querySelector('.thank-you-title')) {
+    currentLang = getLangFromUrl() || 'en';
+} else {
+    currentLang = 'en';
+}
 const langToggleBtn = document.getElementById('lang-toggle-btn');
 
 function updateLangBtn() {
